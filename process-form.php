@@ -37,6 +37,19 @@ function loadSecureEnvForProcessForm(): void
 
 loadSecureEnvForProcessForm();
 
+$includedFiles = get_included_files();
+$envFile = 'Not Found';
+foreach ($includedFiles as $file) {
+    if (strpos($file, 'secure_env.php') !== false) {
+        $envFile = $file;
+    }
+}
+die("<div style='padding:40px; background:#111; color:#0f0; font-family:monospace;'>
+    <h2>Debug Info</h2>
+    <p>Loaded Config File: <strong>" . $envFile . "</strong></p>
+    <p>API Key Starts With: <strong>" . substr(ZEPTO_API_KEY, 0, 25) . "...</strong></p>
+    </div>");
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: index.php");
     exit;
