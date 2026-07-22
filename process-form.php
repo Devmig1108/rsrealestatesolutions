@@ -15,7 +15,7 @@ function loadSecureEnvForProcessForm(): void
         __DIR__ . '/../../config/secure_env.php',
         __DIR__ . '/config/secure_env.php',
         isset($_SERVER['DOCUMENT_ROOT'])
-            ? rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/../config/secure_env.php'
+            ? rtrim($_SERVER['DOCUMENT_ROOT'], '/') . 'config/secure_env.php'
             : null,
     ];
 
