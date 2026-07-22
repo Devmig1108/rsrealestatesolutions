@@ -67,7 +67,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="RS Real Estate Solutions home">
-        <img src="assets/rs-logo.png" alt="RS Real Estate Solutions logo">
+        <img src="/assets/rs-logo.png" alt="RS Real Estate Solutions logo">
       </a>
 
       <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation">
