@@ -12,7 +12,7 @@ $issuedAt = time();
 $nonce = bin2hex(random_bytes(16));
 $payload = $issuedAt . '.' . $nonce;
 $signature = hash_hmac('sha256', $payload, $tokenSecret);
-$formToken = $issuedAt . '.' . $nonce . '.' . $signature;
+$formToken = base64_encode($issuedAt . '.' . $nonce . '.' . $signature);
 
 // Grab the Turnstile Site Key
 $turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
