@@ -104,7 +104,7 @@
               <span class="service-number">Featured / Comfort</span>
               <h3>HVAC Services</h3>
               <p>Heating and cooling installation, replacement, repair, and maintenance for El Paso homes and commercial properties.</p>
-              <a href="hvac-services-el-paso/index.html">Explore HVAC Services <span>→</span></a>
+              <a href="hvac-services-el-paso">Explore HVAC Services <span>→</span></a>
             </div>
           </article>
         </div>
@@ -156,7 +156,7 @@
             <span>Energy-efficiency guidance</span>
           </div>
           <div class="hero-buttons">
-            <a class="button" href="hvac-services-el-paso/index.html">View HVAC Services</a>
+            <a class="button" href="hvac-services-el-paso">View HVAC Services</a>
             <a class="button button-ghost" href="#contact">Request HVAC Service</a>
           </div>
         </div>
