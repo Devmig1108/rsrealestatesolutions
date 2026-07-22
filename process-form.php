@@ -11,11 +11,14 @@ function loadSecureEnvForProcessForm(): void
     }
 
     $possiblePaths = [
+        // 1. Check the local site directory FIRST
+        __DIR__ . '/config/secure_env.php',
+        
+        // 2. Then check fallback root directories
         __DIR__ . '/../config/secure_env.php',
         __DIR__ . '/../../config/secure_env.php',
-        __DIR__ . '/config/secure_env.php',
         isset($_SERVER['DOCUMENT_ROOT'])
-            ? rtrim($_SERVER['DOCUMENT_ROOT'], '/') . 'config/secure_env.php'
+            ? rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/../config/secure_env.php'
             : null,
     ];
 
