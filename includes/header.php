@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js');window.setTimeout(function(){document.documentElement.classList.add('is-loaded');},2500);</script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <script src="animations.js" defer></script>
 
   <script type="application/ld+json">
@@ -74,11 +74,11 @@
       <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true"><span></span></label>
 
       <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#process">Process</a>
-        <a href="#nebula">Nebula</a>
-        <a href="#contact">Contact</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#process">Process</a>
+        <a href="/#nebula">Nebula</a>
+        <a href="/#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
