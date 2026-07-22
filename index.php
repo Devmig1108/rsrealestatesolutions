@@ -1,96 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>RS Real Estate Solutions | Remodeling, Construction, HVAC & Real Estate Services in El Paso, TX</title>
-  <meta name="description" content="RS Real Estate Solutions helps El Paso homeowners, investors, and property owners improve, repair, reposition, and maximize property value through remodeling, construction, HVAC, and real estate services.">
-  <meta name="keywords" content="El Paso remodeling, construction services El Paso, HVAC services El Paso, real estate solutions El Paso, home renovations El Paso, property investment services">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://rsrealstatesolutions.com/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="RS Real Estate Solutions | Unlock Your Property's Full Potential">
-  <meta property="og:description" content="Local remodeling, construction, HVAC, and real estate solutions for El Paso homeowners and investors.">
-  <meta property="og:url" content="https://rsrealstatesolutions.com/">
-  <meta property="og:image" content="https://rsrealstatesolutions.com/images/og-rs-real-estate-solutions.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add('js');window.setTimeout(function(){document.documentElement.classList.add('is-loaded');},2500);</script>
-  <link rel="stylesheet" href="styles.css">
-  <script src="animations.js" defer></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "RS Real Estate Solutions",
-    "url": "https://rsrealstatesolutions.com/",
-    "telephone": "+1-915-221-3516",
-    "image": "https://rsrealstatesolutions.com/images/rs-logo.png",
-    "description": "El Paso property solutions company providing remodeling, construction, HVAC, and real estate services for homeowners, investors, and property owners.",
-    "areaServed": {
-      "@type": "City",
-      "name": "El Paso"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "El Paso",
-      "addressRegion": "TX",
-      "addressCountry": "US"
-    },
-    "sameAs": [
-      "https://www.instagram.com/REPLACE_ME",
-      "https://www.tiktok.com/@REPLACE_ME",
-      "https://www.youtube.com/@REPLACE_ME"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Property Services",
-      "itemListElement": [
-        {"@type":"OfferCatalog","name":"Remodeling Services"},
-        {"@type":"OfferCatalog","name":"Construction Services"},
-        {"@type":"OfferCatalog","name":"Real Estate Solutions"},
-        {"@type":"OfferCatalog","name":"HVAC Services"}
-      ]
-    }
-  }
-  </script>
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="RS Real Estate Solutions home">
-        <img src="assets/rs-logo.png" alt="RS Real Estate Solutions logo">
-      </a>
-
-      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation">
-      <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true"><span></span></label>
-
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#process">Process</a>
-        <a href="#nebula">Nebula</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="social-links" aria-label="Social media links">
-          <a href="https://www.tiktok.com/@REPLACE_ME" aria-label="TikTok">TT</a>
-          <a href="https://www.youtube.com/@REPLACE_ME" aria-label="YouTube">YT</a>
-          <a href="https://www.instagram.com/REPLACE_ME" aria-label="Instagram">IG</a>
-        </div>
-        <a class="button button-small" href="#contact">Request a Consultation</a>
-      </div>
-    </div>
-  </header>
+<?php include 'includes/header.php'; ?>
 
   <main id="main-content">
     <section class="hero hero-home" id="top">
@@ -285,7 +193,6 @@
           <p class="eyebrow dark">Connected Home Services</p>
           <h2>Home Maintenance Powered by Property Experience</h2>
           <p>RS Real Estate Solutions also supports property services delivered through Nebula Smart Home. Nebula gives homeowners a convenient point of contact for ongoing maintenance and service coordination, while RS brings the remodeling, construction, HVAC, and property experience needed to move the work forward.</p>
-          <!-- Confirm the exact legal and operational relationship between RS and Nebula with Raul before launch. -->
           <a class="button dark-button" href="https://www.nebulasmarthome.com/">Visit Nebula Smart Home</a>
         </div>
         <div class="nebula-panel">
@@ -329,64 +236,10 @@
           </div>
         </div>
 
-        <form class="contact-form" action="#" method="post">
-          <div class="field-row">
-            <label>Full Name<input type="text" name="name" autocomplete="name" required></label>
-            <label>Phone Number<input type="tel" name="phone" autocomplete="tel" required></label>
-          </div>
-          <div class="field-row">
-            <label>Email Address<input type="email" name="email" autocomplete="email" required></label>
-            <label>Service Needed
-              <select name="service" required>
-                <option value="">Choose a service</option>
-                <option>Remodeling</option>
-                <option>Construction Services</option>
-                <option>Real Estate Solutions</option>
-                <option>HVAC Services</option>
-                <option>Not Sure Yet</option>
-              </select>
-            </label>
-          </div>
-          <label>Property Location<input type="text" name="location" placeholder="El Paso, TX or surrounding area"></label>
-          <label>Tell Us About the Property<textarea name="message" rows="6" required></textarea></label>
-          <button class="button dark-button" type="submit">Send Consultation Request</button>
-          <p class="form-note">Demo form only. Connect this form to the client's preferred email, CRM, or lead-processing endpoint before launch.</p>
-        </form>
+        <?php include 'includes/contact-form.php'; ?>
+
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="assets/rs-logo.png" alt="RS Real Estate Solutions">
-        <p>Property improvement, construction, HVAC, and real estate solutions for El Paso homeowners and investors.</p>
-      </div>
-      <div>
-        <h3>Services</h3>
-        <a href="#services">Remodeling</a>
-        <a href="#services">Construction</a>
-        <a href="#services">Real Estate Solutions</a>
-        <a href="hvac-services-el-paso/index.html">HVAC Services</a>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <a href="#about">About RS</a>
-        <a href="#process">How It Works</a>
-        <a href="#nebula">Nebula Smart Home</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <a href="tel:+19152213516">(915) 221-3516</a>
-        <a href="mailto:info@rsrealstatesolutions.com">info@rsrealstatesolutions.com</a>
-        <p>El Paso, Texas</p>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© 2026 RS Real Estate Solutions. All rights reserved.</p>
-      <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
-    </div>
-  </footer>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
