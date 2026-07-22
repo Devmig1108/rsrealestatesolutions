@@ -455,7 +455,7 @@ $htmlBody = "
 
 $payload = json_encode([
     "from" => [
-        "address" => "services@rsrealestatesolutions.com", // Ensure this domain is verified in ZeptoMail
+        "address" => "services@rsrealestatesolutionsep.com", // Ensure this domain is verified in ZeptoMail
         "name" => "RS Real Estate Website"
     ],
     "to" => [
@@ -468,7 +468,7 @@ $payload = json_encode([
     ],
     "subject" => $subject,
     "htmlbody" => $htmlBody,
-    "bounce_address" => "bounce@bounce-zem.rsrealestatesolutions.com" // Ensure this bounce domain is configured
+    "bounce_address" => "bounce@bounce-zem.rsrealestatesolutionsep.com" // Ensure this bounce domain is configured
 ]);
 
 if (!$payload) {
