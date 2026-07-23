@@ -21,13 +21,13 @@
       <div>
         <h3>Contact</h3>
         <a href="tel:+19152213516">(915) 221-3516</a>
-        <a href="mailto:info@rsrealstatesolutions.com">info@rsrealstatesolutions.com</a>
+        <a href="mailto:raul@nebulastat.com">raul@nebulastat.com</a>
         <p>El Paso, Texas</p>
       </div>
     </div>
     <div class="container footer-bottom">
       <p>© 2026 RS Real Estate Solutions. All rights reserved.</p>
-      <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      <!-- <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div> -->
     </div>
   </footer>
 </body>

@@ -226,7 +226,7 @@
           <p>Tell us what you are working on, where the property is located, and what result you are trying to achieve.</p>
           <div class="contact-details">
             <a href="tel:+19152213516"><span>Call</span>(915) 221-3516</a>
-            <a href="mailto:info@rsrealstatesolutions.com"><span>Email</span>info@rsrealstatesolutions.com</a>
+            <a href="mailto:raul@nebulastat.com"><span>Email</span>raul@nebulastat.com</a>
             <p><span>Service Area</span>El Paso, Texas and surrounding communities</p>
           </div>
           <div class="contact-socials">
