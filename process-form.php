@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 // Updated Recipient for RS Real Estate
-$recipient_email = "miguel@ervotechep.com";
+$recipient_email = "raul@nebulastat.com";
 
 function getClientIp(): string
 {
