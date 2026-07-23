@@ -20,7 +20,7 @@ $turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-<form class="contact-form" action="process-form.php" method="post">
+<form class="contact-form" action="/process-form.php" method="post">
   
   <div style="display:none;" aria-hidden="true">
     <label>Leave this field blank
