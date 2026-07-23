@@ -1,7 +1,7 @@
 <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="assets/rs-logo.png" alt="RS Real Estate Solutions">
+        <img class="footer-logo" src="/assets/rs-logo.png" alt="RS Real Estate Solutions">
         <p>Property improvement, construction, HVAC, and real estate solutions for El Paso homeowners and investors.</p>
       </div>
       <div>
