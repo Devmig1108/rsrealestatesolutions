@@ -27,6 +27,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/rs-logo.png">
   <link rel="icon" type="image/x-icon" href="/assets/rs-logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/rs-logo.png">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XHQY4LSFF4">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XHQY4LSFF4');
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
