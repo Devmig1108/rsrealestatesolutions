@@ -23,7 +23,7 @@
 
 .hvac-lp {
     --hvac-hero-image: url("/assets/images/hvac/hvac-hero.jpg");
-    --hvac-feature-image: url("/assets/images/hvac/hvac-technician.jpg");
+    --hvac-feature-image: url("/assets/hvac.png");
 
     --hvac-navy-950: #070c12;
     --hvac-navy-900: #0b121b;
@@ -117,7 +117,7 @@
 }
 
 .hvac-lp a {
-    color: inherit;
+    color: white;
     text-decoration: none;
 }
 
