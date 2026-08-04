@@ -1819,7 +1819,7 @@ a.hvac-lp-contact-option:hover {
 }
 
 .hvac-lp-form-shell label {
-    color: var(--hvac-navy-900);
+    color: var(--hvac-white);
     font-size: 0.73rem;
     font-weight: 800;
     letter-spacing: 0.035em;
