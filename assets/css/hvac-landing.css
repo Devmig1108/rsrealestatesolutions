@@ -303,7 +303,7 @@
 
 .hvac-lp-button-light {
     color: var(--hvac-navy-950);
-    background: var(--hvac-white);
+    background: var(--hvac-accent);
     border-color: var(--hvac-white);
 }
 
