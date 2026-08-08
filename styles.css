@@ -2112,6 +2112,423 @@ select {
   animation: mobileMenuIn .42s cubic-bezier(.16, 1, .3, 1) both;
 }
 
+/* ==========================================================================
+   SERVICES NAVIGATION DROPDOWN
+   ========================================================================== */
+
+.services-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Match the normal navigation links */
+
+.main-nav .services-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+
+    font: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+}
+
+
+/* Chevron */
+
+.services-nav-toggle svg {
+    width: 14px;
+    height: 14px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+
+    transition:
+        transform 180ms ease;
+}
+
+
+/* Rotate arrow when open */
+
+.services-nav:hover .services-nav-toggle svg,
+.services-nav:focus-within .services-nav-toggle svg,
+.services-nav.is-open .services-nav-toggle svg {
+    transform: rotate(180deg);
+}
+
+
+/* ==========================================================================
+   DESKTOP DROPDOWN
+   ========================================================================== */
+
+.services-dropdown {
+    position: absolute;
+    z-index: 1200;
+
+    top: calc(100% + 25px);
+    left: 50%;
+
+    width: 410px;
+
+    padding: 10px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9, 15, 22, 0.985),
+            rgba(18, 29, 40, 0.985)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 28px 75px rgba(0, 0, 0, 0.34);
+
+    backdrop-filter: blur(20px);
+
+    transform:
+        translate(-50%, 12px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 180ms ease,
+        visibility 180ms ease,
+        transform 180ms ease;
+}
+
+
+/*
+ * Invisible bridge between nav label and dropdown.
+ *
+ * This prevents the menu from disappearing while
+ * the mouse crosses the gap.
+ */
+
+.services-dropdown::before {
+    position: absolute;
+
+    right: 0;
+    bottom: 100%;
+    left: 0;
+
+    height: 26px;
+
+    content: "";
+}
+
+
+/* Open states */
+
+.services-nav:hover .services-dropdown,
+.services-nav:focus-within .services-dropdown,
+.services-nav.is-open .services-dropdown {
+    visibility: visible;
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+
+    pointer-events: auto;
+}
+
+
+/* ==========================================================================
+   DROPDOWN INTRO
+   ========================================================================== */
+
+.services-dropdown-header {
+    padding:
+        16px
+        16px
+        17px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.09);
+}
+
+.services-dropdown-header span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: rgba(224, 187, 130, 0.82);
+
+    font-size: 0.61rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.services-dropdown-header p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.46);
+
+    font-size: 0.69rem;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================================
+   SERVICE LINKS
+   ========================================================================== */
+
+.main-nav .services-dropdown-item {
+    display: grid;
+
+    grid-template-columns:
+        31px
+        minmax(0, 1fr)
+        auto;
+
+    gap: 14px;
+
+    align-items: center;
+
+    padding:
+        17px
+        15px;
+
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    transition:
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.main-nav .services-dropdown-item:hover,
+.main-nav .services-dropdown-item:focus-visible {
+    background:
+        rgba(255, 255, 255, 0.065);
+
+    transform:
+        translateX(3px);
+}
+
+
+.services-dropdown-number {
+    color:
+        rgba(224, 187, 130, 0.65);
+
+    font-size: 0.60rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+
+.services-dropdown-copy {
+    display: grid;
+    gap: 4px;
+}
+
+
+.services-dropdown-copy strong {
+    color: #ffffff;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.services-dropdown-copy small {
+    max-width: 250px;
+
+    color:
+        rgba(255, 255, 255, 0.46);
+
+    font-size: 0.65rem;
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+.services-dropdown-arrow {
+    color: #e0bb82;
+
+    font-size: 1rem;
+
+    transition:
+        transform 180ms ease;
+}
+
+
+.services-dropdown-item:hover
+.services-dropdown-arrow {
+    transform:
+        translateX(4px);
+}
+
+
+/* ==========================================================================
+   MOBILE SERVICES NAV
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+    .services-nav {
+        display: block;
+        width: 100%;
+    }
+
+
+    /*
+     * Services behaves like the other full-width
+     * mobile navigation items.
+     */
+
+    .main-nav .services-nav-toggle {
+        width: 100%;
+
+        justify-content: space-between;
+
+        text-align: left;
+    }
+
+
+    /*
+     * Dropdown becomes an accordion inside
+     * the existing mobile navigation.
+     */
+
+    .services-dropdown {
+        position: static;
+
+        width: 100%;
+        max-height: 0;
+
+        margin: 0;
+        padding: 0;
+
+        visibility: visible;
+        opacity: 1;
+
+        overflow: hidden;
+
+        background: transparent;
+
+        border: 0;
+        border-radius: 0;
+
+        box-shadow: none;
+
+        backdrop-filter: none;
+
+        transform: none;
+
+        pointer-events: none;
+
+        transition:
+            max-height 280ms ease,
+            margin-top 280ms ease;
+    }
+
+
+    .services-dropdown::before {
+        display: none;
+    }
+
+
+    /*
+     * On mobile we only want tap behavior.
+     * Don't let hover force it open.
+     */
+
+    .services-nav:hover .services-dropdown {
+        max-height: 0;
+        margin-top: 0;
+
+        pointer-events: none;
+    }
+
+
+    .services-nav.is-open .services-dropdown,
+    .services-nav:focus-within.is-open
+    .services-dropdown {
+        max-height: 340px;
+
+        margin-top: 14px;
+
+        pointer-events: auto;
+    }
+
+
+    .services-dropdown-header {
+        padding:
+            13px
+            10px
+            14px
+            17px;
+
+        border-left:
+            1px solid rgba(224, 187, 130, 0.25);
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.07);
+    }
+
+
+    .main-nav .services-dropdown-item {
+        padding:
+            15px
+            10px
+            15px
+            17px;
+
+        border-left:
+            1px solid rgba(224, 187, 130, 0.25);
+
+        border-radius: 0;
+    }
+
+
+    .main-nav .services-dropdown-item:hover {
+        background:
+            rgba(255, 255, 255, 0.04);
+
+        transform: none;
+    }
+
+
+    .services-dropdown-copy small {
+        max-width: none;
+    }
+
+}
+
 @keyframes mobileMenuIn {
   from {
     opacity: 0;
