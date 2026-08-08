@@ -1,0 +1,2507 @@
+/* ==========================================================================
+   RS REAL ESTATE SOLUTIONS
+   ROOFING SERVICES PAGE
+
+   File:
+   /assets/css/roofing-services.css
+
+   Designed to load AFTER the main /styles.css file.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   PAGE VARIABLES
+   ========================================================================== */
+
+.roof-service {
+
+  --roof-ink: #05080b;
+  --roof-ink-soft: #090e13;
+  --roof-panel: #0f171e;
+  --roof-panel-light: #16212a;
+
+  --roof-white: #f8fafb;
+  --roof-ivory: #f0eee8;
+
+  --roof-steel: #91a6b8;
+  --roof-steel-light: #c6d2dc;
+
+  /*
+   * Slightly warmer accent than HVAC.
+   * Gives roofing its own visual identity while
+   * still working with the RS logo.
+   */
+  --roof-accent: #c7a36b;
+  --roof-accent-light: #e0c18f;
+  --roof-accent-dark: #987442;
+
+  --roof-text:
+    rgba(240, 245, 248, .70);
+
+  --roof-text-muted:
+    rgba(240, 245, 248, .48);
+
+  --roof-line:
+    rgba(225, 234, 241, .10);
+
+  --roof-line-bright:
+    rgba(225, 234, 241, .22);
+
+  --roof-shadow:
+    0 34px 90px rgba(0, 0, 0, .42);
+
+  --roof-radius: 6px;
+
+  /*
+   * Replace this if your roofing image uses
+   * another filename.
+   */
+  --roof-image:
+    url("/assets/roofing.png");
+
+  position: relative;
+
+  overflow: hidden;
+
+  color: var(--roof-white);
+
+  background:
+    var(--roof-ink);
+}
+
+
+/* ==========================================================================
+   COMMON
+   ========================================================================== */
+
+.roof-service *,
+.roof-service *::before,
+.roof-service *::after {
+  box-sizing: border-box;
+}
+
+
+.roof-service h1,
+.roof-service h2,
+.roof-service h3,
+.roof-service p {
+  margin-top: 0;
+}
+
+
+.roof-service h1,
+.roof-service h2,
+.roof-service h3 {
+  color: var(--roof-white);
+}
+
+
+.roof-service a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.roof-service-section {
+  position: relative;
+
+  padding:
+    clamp(88px, 9vw, 140px)
+    0;
+}
+
+
+/* ==========================================================================
+   EYEBROW
+   ========================================================================== */
+
+.roof-service-eyebrow {
+  margin:
+    0
+    0
+    18px;
+
+  color: var(--roof-accent-light);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: .67rem;
+  font-weight: 800;
+
+  line-height: 1.5;
+
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.roof-service-button {
+  position: relative;
+
+  min-height: 56px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    0
+    27px;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--roof-accent-light);
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--roof-accent-light),
+      var(--roof-accent-dark)
+    );
+
+  color: var(--roof-ink);
+
+  box-shadow:
+    0 18px 48px rgba(151, 111, 58, .25);
+
+  font-size: .77rem;
+  font-weight: 800;
+
+  letter-spacing: .07em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform .3s cubic-bezier(.22, 1, .36, 1),
+    background .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.roof-service-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    var(--roof-white);
+
+  border-color:
+    var(--roof-white);
+
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, .30);
+}
+
+
+.roof-service-button-outline {
+  background:
+    rgba(255, 255, 255, .025);
+
+  border-color:
+    rgba(255, 255, 255, .28);
+
+  color:
+    var(--roof-white);
+
+  box-shadow: none;
+
+  backdrop-filter:
+    blur(12px);
+}
+
+
+.roof-service-button-outline:hover {
+  color:
+    var(--roof-ink);
+
+  background:
+    var(--roof-white);
+
+  border-color:
+    var(--roof-white);
+}
+
+
+.roof-service-button-dark {
+  color:
+    var(--roof-white);
+
+  background:
+    linear-gradient(
+      135deg,
+      #202e3a,
+      #0b1015
+    );
+
+  border-color:
+    rgba(255, 255, 255, .11);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, .25);
+}
+
+
+.roof-service-button-dark:hover {
+  color:
+    var(--roof-ink);
+
+  background:
+    var(--roof-accent-light);
+
+  border-color:
+    var(--roof-accent-light);
+}
+
+
+.roof-service-text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color:
+    var(--roof-steel-light);
+
+  font-size: .72rem;
+  font-weight: 800;
+
+  letter-spacing: .11em;
+
+  text-transform: uppercase;
+}
+
+
+.roof-service-text-link span {
+  transition:
+    transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+.roof-service-text-link:hover span {
+  transform:
+    translateX(6px);
+}
+
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.roof-service-hero {
+  position: relative;
+
+  min-height: 930px;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    185px
+    0
+    0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  border-bottom:
+    1px solid var(--roof-line);
+
+  background:
+    var(--roof-ink);
+}
+
+
+.roof-service-hero-media {
+  position: absolute;
+
+  z-index: -5;
+
+  inset: 0;
+
+  background:
+
+    var(--roof-image)
+    70% center /
+    cover
+    no-repeat,
+
+    linear-gradient(
+      135deg,
+      #27343d,
+      #070b0e
+    );
+
+  filter:
+    saturate(.67)
+    contrast(1.12)
+    brightness(.67);
+
+  transform:
+    scale(1.025);
+}
+
+
+.roof-service-hero-overlay {
+  position: absolute;
+
+  z-index: -4;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+      circle at 77% 26%,
+      rgba(198, 163, 107, .16),
+      transparent 28rem
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(4, 7, 10, .995) 0%,
+      rgba(5, 8, 11, .96) 35%,
+      rgba(5, 8, 11, .68) 68%,
+      rgba(5, 8, 11, .77) 100%
+    ),
+
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      var(--roof-ink) 100%
+    );
+}
+
+
+.roof-service-hero::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: -2;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 270px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      var(--roof-ink)
+    );
+}
+
+
+/* ==========================================================================
+   HERO ROOFLINE DRAWING
+   ========================================================================== */
+
+.roof-service-linework {
+  position: absolute;
+
+  z-index: -1;
+
+  right: -3%;
+  bottom: 35px;
+
+  width:
+    min(67vw, 1000px);
+
+  pointer-events: none;
+
+  opacity: .42;
+}
+
+
+.roof-service-linework svg {
+  width: 100%;
+  height: auto;
+}
+
+
+.roof-service-linework path {
+  fill: none;
+
+  stroke:
+    rgba(222, 201, 165, .25);
+
+  stroke-width: 1;
+
+  vector-effect:
+    non-scaling-stroke;
+}
+
+
+/* ==========================================================================
+   HERO GRID
+   ========================================================================== */
+
+.roof-service-hero-grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(320px, .55fr);
+
+  gap:
+    clamp(60px, 8vw, 112px);
+
+  align-items: center;
+
+  padding-bottom:
+    110px;
+}
+
+
+.roof-service-hero-copy {
+  max-width: 870px;
+}
+
+
+.roof-service-hero h1 {
+  max-width: 900px;
+
+  margin:
+    0
+    0
+    27px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(4rem, 6.7vw, 7rem);
+
+  font-weight: 600;
+
+  line-height: .96;
+
+  letter-spacing: -.068em;
+
+  text-wrap: balance;
+
+  text-shadow:
+    0 26px 70px rgba(0, 0, 0, .45);
+}
+
+
+.roof-service-hero h1 em {
+  display: block;
+
+  color:
+    var(--roof-accent-light);
+
+  font-weight: 600;
+}
+
+
+.roof-service-hero-lead {
+  max-width: 700px;
+
+  margin:
+    0
+    0
+    36px;
+
+  color:
+    rgba(255, 255, 255, .74);
+
+  font-size:
+    clamp(1.03rem, 1.45vw, 1.22rem);
+
+  line-height: 1.72;
+}
+
+
+.roof-service-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 13px;
+}
+
+
+/* ==========================================================================
+   HERO PANEL
+   ========================================================================== */
+
+.roof-service-hero-panel {
+  position: relative;
+
+  padding:
+    44px
+    42px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(23, 31, 38, .91),
+      rgba(6, 10, 13, .86)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, .14);
+
+  border-radius:
+    var(--roof-radius);
+
+  box-shadow:
+    var(--roof-shadow);
+
+  backdrop-filter:
+    blur(26px)
+    saturate(125%);
+}
+
+
+.roof-service-hero-panel::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--roof-accent-light),
+      transparent
+    );
+}
+
+
+.roof-service-hero-panel::after {
+  content: "";
+
+  position: absolute;
+
+  width: 205px;
+  height: 205px;
+
+  right: -125px;
+  bottom: -125px;
+
+  border:
+    1px solid rgba(223, 193, 143, .13);
+
+  transform:
+    rotate(45deg);
+}
+
+
+.roof-service-panel-number {
+  margin:
+    0
+    0
+    38px;
+
+  color:
+    rgba(255, 255, 255, .28);
+
+  font-size: .61rem;
+  font-weight: 800;
+
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
+}
+
+
+.roof-service-panel-kicker {
+  color:
+    var(--roof-accent-light);
+
+  font-size: .65rem;
+  font-weight: 800;
+
+  letter-spacing: .17em;
+
+  text-transform: uppercase;
+}
+
+
+.roof-service-hero-panel h2 {
+  margin:
+    12px
+    0
+    18px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(2rem, 2.8vw, 2.75rem);
+
+  line-height: 1.06;
+
+  letter-spacing: -.045em;
+}
+
+
+.roof-service-hero-panel > p:not(.roof-service-panel-number) {
+  color:
+    rgba(255, 255, 255, .57);
+
+  font-size: .89rem;
+
+  line-height: 1.72;
+}
+
+
+.roof-service-hero-panel a {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-top: 19px;
+
+  color:
+    var(--roof-white);
+
+  font-size: .70rem;
+  font-weight: 800;
+
+  letter-spacing: .11em;
+
+  text-transform: uppercase;
+}
+
+
+.roof-service-hero-panel a span {
+  color:
+    var(--roof-accent-light);
+
+  transition:
+    transform .3s ease;
+}
+
+
+.roof-service-hero-panel a:hover span {
+  transform:
+    translate(4px, -4px);
+}
+
+
+/* ==========================================================================
+   HERO BOTTOM STRIP
+   ========================================================================== */
+
+.roof-service-hero-footer {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  border-top:
+    1px solid rgba(255, 255, 255, .10);
+
+  border-left:
+    1px solid rgba(255, 255, 255, .10);
+}
+
+
+.roof-service-hero-footer > div {
+  display: flex;
+
+  min-height: 95px;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding:
+    20px
+    25px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, .10);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, .10);
+}
+
+
+.roof-service-hero-footer span {
+  color:
+    var(--roof-accent-light);
+
+  font-size: .59rem;
+  font-weight: 800;
+
+  letter-spacing: .13em;
+}
+
+
+.roof-service-hero-footer p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, .56);
+
+  font-size: .70rem;
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   SHARED SECTION HEADING
+   ========================================================================== */
+
+.roof-service-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, .55fr);
+
+  gap:
+    clamp(48px, 8vw, 110px);
+
+  align-items: end;
+
+  margin-bottom:
+    clamp(55px, 7vw, 90px);
+}
+
+
+.roof-service-heading h2,
+.roof-condition-intro h2,
+.roof-property-copy h2,
+.roof-service-contact h2 {
+  max-width: 830px;
+
+  margin:
+    0;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(3rem, 5vw, 5.25rem);
+
+  font-weight: 600;
+
+  line-height: 1.02;
+
+  letter-spacing: -.058em;
+
+  text-wrap: balance;
+}
+
+
+.roof-service-heading h2 em,
+.roof-condition-intro h2 em,
+.roof-property-copy h2 em,
+.roof-service-contact h2 em {
+  display: block;
+
+  color:
+    var(--roof-accent-light);
+
+  font-weight: 600;
+}
+
+
+.roof-service-heading > p {
+  max-width: 520px;
+
+  margin:
+    0
+    0
+    7px;
+
+  padding-left: 24px;
+
+  color:
+    var(--roof-text);
+
+  border-left:
+    1px solid rgba(224, 193, 143, .28);
+
+  font-size: .93rem;
+
+  line-height: 1.75;
+}
+
+
+.roof-service-heading-center {
+  display: block;
+
+  max-width: 850px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   ROOFING SOLUTIONS
+   ========================================================================== */
+
+.roof-service-solutions {
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 0,
+      rgba(190, 154, 97, .075),
+      transparent 33rem
+    ),
+
+    linear-gradient(
+      180deg,
+      #070b0f,
+      var(--roof-ink)
+    );
+}
+
+
+.roof-service-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.roof-service-card {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    clamp(35px, 4vw, 52px);
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 92% 10%,
+      rgba(198, 163, 107, .09),
+      transparent 17rem
+    ),
+
+    linear-gradient(
+      150deg,
+      #111921,
+      #090e13
+    );
+
+  border:
+    1px solid var(--roof-line);
+
+  border-radius:
+    var(--roof-radius);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, .25);
+
+  transition:
+    transform .35s cubic-bezier(.22, 1, .36, 1),
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+
+.roof-service-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -90px;
+  bottom: -105px;
+
+  width: 210px;
+  height: 210px;
+
+  border:
+    1px solid rgba(223, 193, 143, .09);
+
+  transform:
+    rotate(45deg);
+
+  transition:
+    transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+.roof-service-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(224, 193, 143, .25);
+
+  box-shadow:
+    0 38px 90px rgba(0, 0, 0, .40);
+}
+
+
+.roof-service-card:hover::after {
+  transform:
+    rotate(45deg)
+    scale(1.12);
+}
+
+
+.roof-service-card > span {
+  color:
+    rgba(225, 234, 241, .31);
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .17em;
+}
+
+
+.roof-service-card h3 {
+  max-width: 500px;
+
+  margin:
+    auto
+    0
+    18px;
+
+  padding-top: 60px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(2rem, 3.2vw, 3rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -.05em;
+}
+
+
+.roof-service-card p {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 560px;
+
+  margin:
+    0
+    0
+    28px;
+
+  color:
+    var(--roof-text);
+
+  font-size: .90rem;
+
+  line-height: 1.72;
+}
+
+
+.roof-service-card a {
+  position: relative;
+
+  z-index: 1;
+
+  color:
+    var(--roof-accent-light);
+
+  font-size: .68rem;
+  font-weight: 800;
+
+  letter-spacing: .11em;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+   ROOF CONDITION / WARNING SIGNS
+   ========================================================================== */
+
+.roof-condition {
+  background:
+    var(--roof-ivory);
+
+  color:
+    var(--roof-ink);
+}
+
+
+.roof-condition-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .75fr)
+    minmax(0, 1.15fr);
+
+  gap:
+    clamp(70px, 10vw, 145px);
+
+  align-items: start;
+}
+
+
+.roof-condition .roof-service-eyebrow {
+  color:
+    var(--roof-accent-dark);
+}
+
+
+.roof-condition-intro {
+  position: sticky;
+
+  top: 130px;
+}
+
+
+.roof-condition-intro h2 {
+  color:
+    var(--roof-ink);
+
+  margin-bottom: 28px;
+}
+
+
+.roof-condition-intro h2 em {
+  color:
+    var(--roof-accent-dark);
+}
+
+
+.roof-condition-intro > p {
+  max-width: 570px;
+
+  margin-bottom: 34px;
+
+  color:
+    #59636b;
+
+  font-size: .96rem;
+
+  line-height: 1.8;
+}
+
+
+.roof-condition-list {
+  border-top:
+    1px solid rgba(5, 8, 11, .13);
+}
+
+
+.roof-condition-list article {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    1fr;
+
+  gap: 24px;
+
+  padding:
+    33px
+    0;
+
+  border-bottom:
+    1px solid rgba(5, 8, 11, .13);
+}
+
+
+.roof-condition-list article > span {
+  padding-top: 5px;
+
+  color:
+    var(--roof-accent-dark);
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+}
+
+
+.roof-condition-list h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color:
+    var(--roof-ink);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(1.45rem, 2.3vw, 2rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -.035em;
+}
+
+
+.roof-condition-list p {
+  max-width: 690px;
+
+  margin: 0;
+
+  color:
+    #67717a;
+
+  font-size: .88rem;
+
+  line-height: 1.75;
+}
+
+
+/* ==========================================================================
+   PROPERTY EXPERIENCE
+   ========================================================================== */
+
+.roof-property {
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 22% 25%,
+      rgba(194, 160, 104, .10),
+      transparent 29rem
+    ),
+
+    linear-gradient(
+      145deg,
+      #10171d,
+      #060a0d
+    );
+}
+
+
+.roof-property-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(350px, .9fr)
+    minmax(0, 1.1fr);
+
+  gap:
+    clamp(70px, 9vw, 125px);
+
+  align-items: center;
+}
+
+
+/* ==========================================================================
+   PROPERTY IMAGE
+   ========================================================================== */
+
+.roof-property-visual {
+  position: relative;
+
+  min-height: 680px;
+}
+
+
+.roof-property-image {
+  position: absolute;
+
+  z-index: 2;
+
+  inset:
+    0
+    50px
+    65px
+    0;
+
+  overflow: hidden;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(5, 8, 11, .65)
+    ),
+
+    var(--roof-image)
+    center /
+    cover
+    no-repeat,
+
+    linear-gradient(
+      135deg,
+      #29363e,
+      #0b1116
+    );
+
+  border-radius:
+    var(--roof-radius);
+
+  box-shadow:
+    var(--roof-shadow);
+
+  filter:
+    saturate(.72)
+    contrast(1.08)
+    brightness(.78);
+}
+
+
+.roof-property-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border:
+    1px solid rgba(255, 255, 255, .12);
+
+  pointer-events: none;
+}
+
+
+.roof-property-visual::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 40px;
+  right: 0;
+  bottom: 25px;
+  left: 45px;
+
+  border:
+    1px solid rgba(223, 193, 143, .18);
+}
+
+
+.roof-property-caption {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 0;
+  bottom: 0;
+
+  width:
+    min(310px, 77%);
+
+  padding:
+    27px
+    29px;
+
+  color:
+    var(--roof-ink);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ead5b4,
+      var(--roof-accent)
+    );
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, .39);
+}
+
+
+.roof-property-caption span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color:
+    rgba(5, 8, 11, .45);
+
+  font-size: .62rem;
+  font-weight: 900;
+
+  letter-spacing: .18em;
+}
+
+
+.roof-property-caption p {
+  margin: 0;
+
+  color:
+    var(--roof-ink);
+
+  font-size: .84rem;
+  font-weight: 700;
+
+  line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   PROPERTY COPY
+   ========================================================================== */
+
+.roof-property-copy h2 {
+  margin-bottom: 29px;
+}
+
+
+.roof-property-copy > p:not(.roof-service-eyebrow) {
+  max-width: 690px;
+
+  margin-bottom: 33px;
+
+  color:
+    var(--roof-text);
+
+  font-size: .96rem;
+
+  line-height: 1.82;
+}
+
+
+.roof-property-benefits {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-bottom: 35px;
+
+  background:
+    var(--roof-line);
+
+  border:
+    1px solid var(--roof-line);
+}
+
+
+.roof-property-benefits > div {
+  display: flex;
+
+  gap: 13px;
+
+  align-items: flex-start;
+
+  min-height: 89px;
+
+  padding:
+    22px;
+
+  background:
+    rgba(8, 13, 17, .97);
+}
+
+
+.roof-property-benefits span {
+  display: grid;
+
+  width: 23px;
+  height: 23px;
+
+  flex:
+    0 0
+    23px;
+
+  place-items: center;
+
+  margin-top: 1px;
+
+  color:
+    var(--roof-accent-light);
+
+  border:
+    1px solid rgba(224, 193, 143, .25);
+
+  border-radius: 50%;
+
+  font-size: .62rem;
+  font-weight: 900;
+}
+
+
+.roof-property-benefits p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, .67);
+
+  font-size: .78rem;
+
+  line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   PROCESS
+   ========================================================================== */
+
+.roof-process {
+  overflow: hidden;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, .015),
+      transparent
+    ),
+
+    #070b0e;
+
+  border-top:
+    1px solid var(--roof-line);
+}
+
+
+.roof-process-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background:
+    var(--roof-line);
+
+  border:
+    1px solid var(--roof-line);
+}
+
+
+.roof-process-grid article {
+  position: relative;
+
+  min-height: 315px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    38px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      155deg,
+      #10171d,
+      #090d11
+    );
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.roof-process-grid article::after {
+  content: "";
+
+  position: absolute;
+
+  width: 145px;
+  height: 145px;
+
+  right: -90px;
+  top: -90px;
+
+  border:
+    1px solid rgba(224, 193, 143, .08);
+
+  transform:
+    rotate(45deg);
+}
+
+
+.roof-process-grid article:hover {
+  z-index: 2;
+
+  transform:
+    translateY(-5px);
+
+  background:
+    #121b22;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, .34);
+}
+
+
+.roof-process-grid > article > span {
+  color:
+    var(--roof-accent-light);
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .17em;
+}
+
+
+.roof-process-grid h3 {
+  margin:
+    auto
+    0
+    15px;
+
+  padding-top: 65px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(1.55rem, 2.4vw, 2rem);
+
+  line-height: 1.08;
+
+  letter-spacing: -.035em;
+}
+
+
+.roof-process-grid p {
+  margin: 0;
+
+  color:
+    var(--roof-text-muted);
+
+  font-size: .84rem;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+
+.roof-service-contact {
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 12% 17%,
+      rgba(190, 154, 98, .11),
+      transparent 27rem
+    ),
+
+    radial-gradient(
+      circle at 90% 78%,
+      rgba(108, 141, 169, .10),
+      transparent 28rem
+    ),
+
+    linear-gradient(
+      180deg,
+      #0d141a,
+      #05080b
+    );
+
+  border-top:
+    1px solid var(--roof-line);
+}
+
+
+.roof-service-contact-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .8fr)
+    minmax(390px, 1.05fr);
+
+  gap:
+    clamp(65px, 9vw, 125px);
+
+  align-items: start;
+}
+
+
+.roof-service-contact h2 {
+  margin-bottom: 27px;
+}
+
+
+.roof-service-contact-grid > div:first-child > p:not(.roof-service-eyebrow) {
+  max-width: 650px;
+
+  margin-bottom: 37px;
+
+  color:
+    var(--roof-text);
+
+  font-size: .96rem;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================================
+   CONTACT DETAILS
+   ========================================================================== */
+
+.roof-service-contact-details {
+  border-top:
+    1px solid var(--roof-line);
+}
+
+
+.roof-service-contact-details > a,
+.roof-service-contact-details > div {
+  display: grid;
+
+  gap: 5px;
+
+  padding:
+    23px
+    0;
+
+  border-bottom:
+    1px solid var(--roof-line);
+}
+
+
+.roof-service-contact-details span {
+  color:
+    var(--roof-accent-light);
+
+  font-size: .61rem;
+  font-weight: 800;
+
+  letter-spacing: .15em;
+
+  text-transform: uppercase;
+}
+
+
+.roof-service-contact-details strong {
+  color:
+    var(--roof-white);
+
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+
+.roof-service-contact-details a {
+  transition:
+    padding-left .3s ease,
+    background .3s ease;
+}
+
+
+.roof-service-contact-details a:hover {
+  padding-left: 13px;
+
+  background:
+    rgba(255, 255, 255, .025);
+}
+
+
+/* ==========================================================================
+   CONTACT FORM WRAPPER
+   ========================================================================== */
+
+.roof-service-form {
+  padding:
+    clamp(28px, 4vw, 46px);
+
+  border:
+    1px solid rgba(255, 255, 255, .11);
+
+  border-radius:
+    var(--roof-radius);
+
+  background:
+
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(198, 163, 107, .09),
+      transparent 16rem
+    ),
+
+    linear-gradient(
+      155deg,
+      #151e26,
+      #090e13
+    );
+
+  box-shadow:
+    var(--roof-shadow);
+}
+
+
+/* ==========================================================================
+   CONTACT FORM COMPATIBILITY
+
+   Works with your existing shared contact-form.php.
+   ========================================================================== */
+
+.roof-service-form .contact-form {
+  padding: 0;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+}
+
+
+.roof-service-form form {
+  width: 100%;
+}
+
+
+.roof-service-form .field-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+
+.roof-service-form label {
+  display: grid;
+
+  gap: 8px;
+
+  margin-bottom: 17px;
+
+  color:
+    rgba(255, 255, 255, .72);
+
+  font-size: .75rem;
+  font-weight: 750;
+}
+
+
+.roof-service-form input:not(
+  [type="hidden"],
+  [type="checkbox"],
+  [type="radio"],
+  [type="submit"]
+),
+.roof-service-form textarea,
+.roof-service-form select {
+  width: 100%;
+
+  min-height: 53px;
+
+  padding:
+    13px
+    15px;
+
+  border:
+    1px solid rgba(255, 255, 255, .12);
+
+  border-radius: 3px;
+
+  outline: none;
+
+  background:
+    rgba(255, 255, 255, .035);
+
+  color:
+    var(--roof-white);
+
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.roof-service-form textarea {
+  min-height: 135px;
+
+  resize: vertical;
+}
+
+
+.roof-service-form select option {
+  color: #111;
+}
+
+
+.roof-service-form input:focus,
+.roof-service-form textarea:focus,
+.roof-service-form select:focus {
+  border-color:
+    var(--roof-accent);
+
+  background:
+    rgba(255, 255, 255, .055);
+
+  box-shadow:
+    0 0 0 3px rgba(198, 163, 107, .12);
+}
+
+
+.roof-service-form button[type="submit"],
+.roof-service-form input[type="submit"] {
+  width: 100%;
+
+  min-height: 57px;
+
+  padding:
+    0
+    24px;
+
+  border:
+    1px solid var(--roof-accent-light);
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--roof-accent-light),
+      var(--roof-accent-dark)
+    );
+
+  color:
+    var(--roof-ink);
+
+  cursor: pointer;
+
+  font-weight: 800;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+
+.roof-service-form button[type="submit"]:hover,
+.roof-service-form input[type="submit"]:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--roof-white);
+
+  border-color:
+    var(--roof-white);
+}
+
+
+/* ==========================================================================
+   SUBTLE ANIMATION
+   ========================================================================== */
+
+@keyframes roofHeroIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes roofPanelIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+.roof-service-hero-copy {
+  animation:
+    roofHeroIn
+    .8s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+.roof-service-hero-panel {
+  animation:
+    roofPanelIn
+    .9s
+    .13s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+.roof-service-hero-footer {
+  animation:
+    roofHeroIn
+    .7s
+    .2s
+    cubic-bezier(.16, 1, .3, 1)
+    both;
+}
+
+
+/* ==========================================================================
+   LARGE TABLET
+   ========================================================================== */
+
+@media (max-width: 1160px) {
+
+  .roof-service-hero {
+    min-height: auto;
+
+    padding-top:
+      155px;
+  }
+
+
+  .roof-service-hero-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(310px, .55fr);
+
+    gap: 55px;
+  }
+
+
+  .roof-service-hero h1 {
+    font-size:
+      clamp(3.8rem, 6vw, 5.8rem);
+  }
+
+
+  .roof-property-grid {
+    gap: 70px;
+  }
+
+
+  .roof-property-visual {
+    min-height: 590px;
+  }
+
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 920px) {
+
+  .roof-service-hero {
+    padding-top:
+      145px;
+  }
+
+
+  .roof-service-hero-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 48px;
+
+    padding-bottom:
+      75px;
+  }
+
+
+  .roof-service-hero-copy {
+    max-width: 770px;
+  }
+
+
+  .roof-service-hero-panel {
+    max-width: 650px;
+  }
+
+
+  .roof-service-hero-footer {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .roof-service-heading {
+    grid-template-columns:
+      1fr;
+
+    gap: 28px;
+  }
+
+
+  .roof-service-heading > p {
+    max-width: 670px;
+  }
+
+
+  .roof-condition-grid,
+  .roof-property-grid,
+  .roof-service-contact-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .roof-condition-intro {
+    position: static;
+  }
+
+
+  .roof-property-visual {
+    width:
+      min(100%, 680px);
+
+    min-height: 630px;
+  }
+
+
+  .roof-process-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 700px) {
+
+  .roof-service-section {
+    padding:
+      78px
+      0;
+  }
+
+
+  /* ----------------------------------------------------------
+     Hero
+     ---------------------------------------------------------- */
+
+  .roof-service-hero {
+    padding:
+      125px
+      0
+      0;
+  }
+
+
+  .roof-service-hero-media {
+    background-position:
+      67% center;
+
+    filter:
+      saturate(.62)
+      contrast(1.10)
+      brightness(.55);
+  }
+
+
+  .roof-service-hero-overlay {
+    background:
+
+      radial-gradient(
+        circle at 70% 12%,
+        rgba(198, 163, 107, .10),
+        transparent 19rem
+      ),
+
+      linear-gradient(
+        180deg,
+        rgba(4, 7, 10, .83) 0%,
+        rgba(4, 7, 10, .94) 45%,
+        rgba(4, 7, 10, .995) 100%
+      );
+  }
+
+
+  .roof-service-linework {
+    right: -70%;
+
+    bottom: 20px;
+
+    width: 165vw;
+
+    opacity: .23;
+  }
+
+
+  .roof-service-hero-grid {
+    padding-bottom:
+      58px;
+  }
+
+
+  .roof-service-hero h1 {
+    font-size:
+      clamp(3rem, 13vw, 4.4rem);
+
+    line-height: .99;
+  }
+
+
+  .roof-service-hero h1 em {
+    display: inline;
+  }
+
+
+  .roof-service-hero-lead {
+    font-size: .98rem;
+  }
+
+
+  .roof-service-actions {
+    display: grid;
+
+    grid-template-columns:
+      1fr;
+
+    width: 100%;
+  }
+
+
+  .roof-service-button {
+    width: 100%;
+  }
+
+
+  /* ----------------------------------------------------------
+     Hero panel
+     ---------------------------------------------------------- */
+
+  .roof-service-hero-panel {
+    padding:
+      29px
+      25px;
+  }
+
+
+  .roof-service-panel-number {
+    margin-bottom: 28px;
+  }
+
+
+  .roof-service-hero-panel h2 {
+    font-size: 2rem;
+  }
+
+
+  /* ----------------------------------------------------------
+     Hero bottom strip
+     ---------------------------------------------------------- */
+
+  .roof-service-hero-footer {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .roof-service-hero-footer > div {
+    min-height: 72px;
+
+    padding:
+      16px
+      19px;
+  }
+
+
+  /* ----------------------------------------------------------
+     Heading
+     ---------------------------------------------------------- */
+
+  .roof-service-heading {
+    margin-bottom: 42px;
+  }
+
+
+  .roof-service-heading h2,
+  .roof-condition-intro h2,
+  .roof-property-copy h2,
+  .roof-service-contact h2 {
+    font-size:
+      clamp(2.55rem, 11vw, 3.7rem);
+
+    line-height: 1.02;
+  }
+
+
+  .roof-service-heading h2 em,
+  .roof-condition-intro h2 em,
+  .roof-property-copy h2 em,
+  .roof-service-contact h2 em {
+    display: inline;
+  }
+
+
+  .roof-service-heading > p {
+    padding-left: 17px;
+  }
+
+
+  /* ----------------------------------------------------------
+     Services
+     ---------------------------------------------------------- */
+
+  .roof-service-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .roof-service-card {
+    min-height: 340px;
+
+    padding:
+      29px
+      24px;
+  }
+
+
+  .roof-service-card h3 {
+    font-size: 2rem;
+  }
+
+
+  /* ----------------------------------------------------------
+     Warning signs
+     ---------------------------------------------------------- */
+
+  .roof-condition-list article {
+    grid-template-columns:
+      43px
+      1fr;
+
+    gap: 14px;
+
+    padding:
+      27px
+      0;
+  }
+
+
+  /* ----------------------------------------------------------
+     Property visual
+     ---------------------------------------------------------- */
+
+  .roof-property-visual {
+    min-height: 470px;
+  }
+
+
+  .roof-property-image {
+    inset:
+      0
+      20px
+      50px
+      0;
+  }
+
+
+  .roof-property-visual::after {
+    top: 25px;
+    right: 0;
+    bottom: 24px;
+    left: 25px;
+  }
+
+
+  .roof-property-caption {
+    width:
+      min(275px, 88%);
+
+    padding:
+      22px;
+  }
+
+
+  .roof-property-benefits {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  /* ----------------------------------------------------------
+     Process
+     ---------------------------------------------------------- */
+
+  .roof-process-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .roof-process-grid article {
+    min-height: 250px;
+
+    padding:
+      29px
+      25px;
+  }
+
+
+  .roof-process-grid h3 {
+    padding-top: 50px;
+  }
+
+
+  /* ----------------------------------------------------------
+     Contact
+     ---------------------------------------------------------- */
+
+  .roof-service-form {
+    padding:
+      27px
+      22px;
+  }
+
+
+  .roof-service-form .field-row {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+/* ==========================================================================
+   VERY SMALL SCREENS
+   ========================================================================== */
+
+@media (max-width: 420px) {
+
+  .roof-service-hero h1 {
+    font-size:
+      2.85rem;
+  }
+
+
+  .roof-service-hero-panel {
+    padding:
+      25px
+      21px;
+  }
+
+
+  .roof-property-visual {
+    min-height: 420px;
+  }
+
+
+  .roof-property-caption {
+    width:
+      90%;
+  }
+
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .roof-service *,
+  .roof-service *::before,
+  .roof-service *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      .01ms !important;
+  }
+
+}
