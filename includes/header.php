@@ -43,100 +43,56 @@ $ogImage = $ogImage
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         <?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>
     </title>
 
-    <meta
-        name="description"
-        content="<?= htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta name="description" content="<?= htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <meta
-        name="keywords"
-        content="<?= htmlspecialchars($metaKeywords, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta name="keywords" content="<?= htmlspecialchars($metaKeywords, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <meta
-        name="robots"
-        content="<?= htmlspecialchars($robots, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta name="robots" content="<?= htmlspecialchars($robots, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <link
-        rel="canonical"
-        href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
 
 
     <!-- =========================================================
          OPEN GRAPH
     ========================================================== -->
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website">
 
-    <meta
-        property="og:title"
-        content="<?= htmlspecialchars($ogTitle, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta property="og:title" content="<?= htmlspecialchars($ogTitle, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <meta
-        property="og:description"
-        content="<?= htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta property="og:description" content="<?= htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <meta
-        property="og:url"
-        content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <meta
-        property="og:image"
-        content="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>"
-    >
+    <meta property="og:image" content="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
 
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
+    <meta name="twitter:card" content="summary_large_image">
 
 
     <!-- =========================================================
          FONTS
     ========================================================== -->
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-    >
+        rel="stylesheet">
 
 
     <!-- =========================================================
          GLOBAL STYLES
     ========================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="/styles.css"
-    >
+    <link rel="stylesheet" href="/styles.css">
 
 
     <!-- =========================================================
@@ -151,44 +107,25 @@ $ogImage = $ogImage
         }, 2500);
     </script>
 
-    <script
-        src="/animations.js"
-        defer
-    ></script>
+    <script src="/animations.js" defer></script>
 
 
     <!-- =========================================================
          ICONS
     ========================================================== -->
 
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/assets/rs-logo.png"
-    >
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/rs-logo.png">
 
-    <link
-        rel="icon"
-        type="image/x-icon"
-        href="/assets/rs-logo.png"
-    >
+    <link rel="icon" type="image/x-icon" href="/assets/rs-logo.png">
 
-    <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/assets/rs-logo.png"
-    >
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/rs-logo.png">
 
 
     <!-- =========================================================
          GOOGLE ANALYTICS
     ========================================================== -->
 
-    <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-XHQY4LSFF4"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHQY4LSFF4"></script>
 
     <script>
 
@@ -206,6 +143,13 @@ $ogImage = $ogImage
         );
 
     </script>
+
+    <script>
+        gtag('config', 'AW-18355036842/ZBqzCJjtu98cEKrFrrBE', {
+            'phone_conversion_number': '(915) 221-3516'
+        });
+    </script>
+
 
 
     <!-- =========================================================
@@ -283,10 +227,7 @@ $ogImage = $ogImage
 
 <body>
 
-    <a
-        class="skip-link"
-        href="#main-content"
-    >
+    <a class="skip-link" href="#main-content">
         Skip to content
     </a>
 
@@ -302,34 +243,18 @@ $ogImage = $ogImage
 
             <!-- BRAND -->
 
-            <a
-                class="brand"
-                href="/"
-                aria-label="RS Real Estate Solutions home"
-            >
+            <a class="brand" href="/" aria-label="RS Real Estate Solutions home">
 
-                <img
-                    src="/assets/rs-logo.png"
-                    alt="RS Real Estate Solutions logo"
-                >
+                <img src="/assets/rs-logo.png" alt="RS Real Estate Solutions logo">
 
             </a>
 
 
             <!-- MOBILE NAVIGATION TOGGLE -->
 
-            <input
-                class="nav-toggle"
-                type="checkbox"
-                id="nav-toggle"
-                aria-label="Open navigation"
-            >
+            <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation">
 
-            <label
-                class="nav-toggle-label"
-                for="nav-toggle"
-                aria-hidden="true"
-            >
+            <label class="nav-toggle-label" for="nav-toggle" aria-hidden="true">
                 <span></span>
             </label>
 
@@ -338,10 +263,7 @@ $ogImage = $ogImage
                  PRIMARY NAVIGATION
             ================================================== -->
 
-            <nav
-                class="main-nav"
-                aria-label="Primary navigation"
-            >
+            <nav class="main-nav" aria-label="Primary navigation">
 
 
                 <!-- =============================================
@@ -350,32 +272,21 @@ $ogImage = $ogImage
 
                 <div class="services-nav">
 
-                    <button
-                        class="services-nav-toggle"
-                        type="button"
-                        aria-expanded="false"
-                        aria-controls="services-nav-menu"
-                    >
+                    <button class="services-nav-toggle" type="button" aria-expanded="false"
+                        aria-controls="services-nav-menu">
 
                         <span>
                             Services
                         </span>
 
-                        <svg
-                            viewBox="0 0 20 20"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <path d="M5 7.5L10 12.5L15 7.5"/>
+                        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <path d="M5 7.5L10 12.5L15 7.5" />
                         </svg>
 
                     </button>
 
 
-                    <div
-                        class="services-dropdown"
-                        id="services-nav-menu"
-                    >
+                    <div class="services-dropdown" id="services-nav-menu">
 
                         <div class="services-dropdown-header">
 
@@ -390,10 +301,7 @@ $ogImage = $ogImage
                         </div>
 
 
-                        <a
-                            class="services-dropdown-item"
-                            href="/hvac-services-el-paso/"
-                        >
+                        <a class="services-dropdown-item" href="/hvac-services-el-paso/">
 
                             <span class="services-dropdown-number">
                                 01
@@ -412,20 +320,14 @@ $ogImage = $ogImage
 
                             </span>
 
-                            <span
-                                class="services-dropdown-arrow"
-                                aria-hidden="true"
-                            >
+                            <span class="services-dropdown-arrow" aria-hidden="true">
                                 →
                             </span>
 
                         </a>
 
 
-                        <a
-                            class="services-dropdown-item"
-                            href="/roofing-services-el-paso/"
-                        >
+                        <a class="services-dropdown-item" href="/roofing-services-el-paso/">
 
                             <span class="services-dropdown-number">
                                 02
@@ -444,10 +346,7 @@ $ogImage = $ogImage
 
                             </span>
 
-                            <span
-                                class="services-dropdown-arrow"
-                                aria-hidden="true"
-                            >
+                            <span class="services-dropdown-arrow" aria-hidden="true">
                                 →
                             </span>
 
@@ -485,39 +384,24 @@ $ogImage = $ogImage
 
             <div class="header-actions">
 
-                <div
-                    class="social-links"
-                    aria-label="Social media links"
-                >
+                <div class="social-links" aria-label="Social media links">
 
-                    <a
-                        href="https://www.tiktok.com/@REPLACE_ME"
-                        aria-label="TikTok"
-                    >
+                    <a href="https://www.tiktok.com/@REPLACE_ME" aria-label="TikTok">
                         TT
                     </a>
 
-                    <a
-                        href="https://www.youtube.com/@REPLACE_ME"
-                        aria-label="YouTube"
-                    >
+                    <a href="https://www.youtube.com/@REPLACE_ME" aria-label="YouTube">
                         YT
                     </a>
 
-                    <a
-                        href="https://www.instagram.com/REPLACE_ME"
-                        aria-label="Instagram"
-                    >
+                    <a href="https://www.instagram.com/REPLACE_ME" aria-label="Instagram">
                         IG
                     </a>
 
                 </div>
 
 
-                <a
-                    class="button button-small"
-                    href="/#contact"
-                >
+                <a class="button button-small" href="/#contact">
                     Request a Consultation
                 </a>
 
