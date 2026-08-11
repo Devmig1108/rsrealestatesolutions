@@ -43,10 +43,7 @@ include '../includes/header.php';
 
 ?>
 
-<link
-    rel="stylesheet"
-    href="/assets/css/hvac-landing.css"
->
+<link rel="stylesheet" href="/assets/css/hvac-landing.css">
 
 <script>
     /*
@@ -115,15 +112,12 @@ include '../includes/header.php';
 
                 <div class="hvac-lp-hero-actions">
 
-                    <a
-                        class="hvac-lp-button hvac-lp-button-primary js-phone-cta"
-                        href="tel:+19152213516"
-                        data-conversion-action="phone-call"
-                        aria-label="Call RS Real Estate Solutions at 915-221-3516"
-                    >
+                    <a class="hvac-lp-button hvac-lp-button-primary js-phone-cta" href="tel:+19152213516"
+                        data-conversion-action="phone-call" aria-label="Call RS Real Estate Solutions at 915-221-3516">
                         <span class="hvac-lp-button-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" focusable="false">
-                                <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/>
+                                <path
+                                    d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
                             </svg>
                         </span>
 
@@ -133,11 +127,8 @@ include '../includes/header.php';
                         </span>
                     </a>
 
-                    <a
-                        class="hvac-lp-button hvac-lp-button-secondary"
-                        href="#schedule-service"
-                        data-conversion-action="form-scroll"
-                    >
+                    <a class="hvac-lp-button hvac-lp-button-secondary" href="#schedule-service"
+                        data-conversion-action="form-scroll">
                         Request Service
                         <span aria-hidden="true">↓</span>
                     </a>
@@ -150,10 +141,7 @@ include '../includes/header.php';
 
             </div>
 
-            <aside
-                class="hvac-lp-booking-card"
-                aria-labelledby="hvac-booking-card-title"
-            >
+            <aside class="hvac-lp-booking-card" aria-labelledby="hvac-booking-card-title">
 
                 <div class="hvac-lp-card-topline">
                     <span>HVAC Appointment</span>
@@ -199,11 +187,8 @@ include '../includes/header.php';
                     </li>
                 </ul>
 
-                <a
-                    class="hvac-lp-button hvac-lp-button-card"
-                    href="#schedule-service"
-                    data-conversion-action="form-scroll"
-                >
+                <a class="hvac-lp-button hvac-lp-button-card" href="#schedule-service"
+                    data-conversion-action="form-scroll">
                     Start My Service Request
                     <span aria-hidden="true">→</span>
                 </a>
@@ -282,7 +267,7 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07 19.07 4.93"/>
+                            <path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07 19.07 4.93" />
                         </svg>
                     </div>
 
@@ -301,7 +286,7 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M13 2 5 14h6l-1 8 8-12h-6l1-8Z"/>
+                            <path d="M13 2 5 14h6l-1 8 8-12h-6l1-8Z" />
                         </svg>
                     </div>
 
@@ -320,7 +305,7 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M4 12h13M13 8l4 4-4 4M4 7h5M4 17h5"/>
+                            <path d="M4 12h13M13 8l4 4-4 4M4 7h5M4 17h5" />
                         </svg>
                     </div>
 
@@ -339,7 +324,7 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M12 3s5 5.2 5 10a5 5 0 0 1-10 0c0-4.8 5-10 5-10Z"/>
+                            <path d="M12 3s5 5.2 5 10a5 5 0 0 1-10 0c0-4.8 5-10 5-10Z" />
                         </svg>
                     </div>
 
@@ -358,7 +343,7 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M5 9v6M9 6v12M13 4v16M17 7v10M21 10v4"/>
+                            <path d="M5 9v6M9 6v12M13 4v16M17 7v10M21 10v4" />
                         </svg>
                     </div>
 
@@ -377,8 +362,9 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
-                            <circle cx="12" cy="12" r="4"/>
+                            <path
+                                d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" />
+                            <circle cx="12" cy="12" r="4" />
                         </svg>
                     </div>
 
@@ -397,7 +383,7 @@ include '../includes/header.php';
 
                     <div class="hvac-lp-problem-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false">
-                            <path d="M4 19V9M10 19V5M16 19v-7M22 19V2"/>
+                            <path d="M4 19V9M10 19V5M16 19v-7M22 19V2" />
                         </svg>
                     </div>
 
@@ -454,11 +440,7 @@ include '../includes/header.php';
                 </h2>
             </div>
 
-            <a
-                class="hvac-lp-callout-phone js-phone-cta"
-                href="tel:+19152213516"
-                data-conversion-action="phone-call"
-            >
+            <a class="hvac-lp-callout-phone js-phone-cta" href="tel:+19152213516" data-conversion-action="phone-call">
                 <span>Call RS Real Estate Solutions</span>
                 <strong>(915) 221-3516</strong>
             </a>
@@ -626,11 +608,7 @@ include '../includes/header.php';
 
             <div class="hvac-lp-why-visual">
 
-                <div
-                    class="hvac-lp-why-image"
-                    role="img"
-                    aria-label="HVAC service for an El Paso property"
-                ></div>
+                <div class="hvac-lp-why-image" role="img" aria-label="HVAC service for an El Paso property"></div>
 
                 <div class="hvac-lp-why-stat">
                     <strong>One Call</strong>
@@ -716,18 +694,12 @@ include '../includes/header.php';
 
                 <div class="hvac-lp-why-actions">
 
-                    <a
-                        class="hvac-lp-button hvac-lp-button-primary js-phone-cta"
-                        href="tel:+19152213516"
-                        data-conversion-action="phone-call"
-                    >
+                    <a class="hvac-lp-button hvac-lp-button-primary js-phone-cta" href="tel:+19152213516"
+                        data-conversion-action="phone-call">
                         Call (915) 221-3516
                     </a>
 
-                    <a
-                        class="hvac-lp-text-link"
-                        href="#schedule-service"
-                    >
+                    <a class="hvac-lp-text-link" href="#schedule-service">
                         Request service online
                         <span aria-hidden="true">→</span>
                     </a>
@@ -896,10 +868,7 @@ include '../includes/header.php';
                     Reserve an HVAC appointment
                 </p>
 
-                <a
-                    class="hvac-lp-button hvac-lp-button-card"
-                    href="#schedule-service"
-                >
+                <a class="hvac-lp-button hvac-lp-button-card" href="#schedule-service">
                     Request My Appointment
                     <span aria-hidden="true">→</span>
                 </a>
@@ -947,10 +916,7 @@ include '../includes/header.php';
                     requests, and the $50 scheduling fee.
                 </p>
 
-                <a
-                    class="hvac-lp-text-link"
-                    href="tel:+19152213516"
-                >
+                <a class="hvac-lp-text-link" href="tel:+19152213516">
                     Have another question? Call us
                     <span aria-hidden="true">→</span>
                 </a>
@@ -1076,11 +1042,7 @@ include '../includes/header.php';
          CONTACT / FORM
     ========================================================== -->
 
-    <section
-        class="hvac-lp-section hvac-lp-contact"
-        id="schedule-service"
-        aria-labelledby="hvac-contact-title"
-    >
+    <section class="hvac-lp-section hvac-lp-contact" id="schedule-service" aria-labelledby="hvac-contact-title">
 
         <div class="hvac-lp-contact-background" aria-hidden="true"></div>
 
@@ -1105,11 +1067,8 @@ include '../includes/header.php';
 
                 <div class="hvac-lp-contact-options">
 
-                    <a
-                        class="hvac-lp-contact-option js-phone-cta"
-                        href="tel:+19152213516"
-                        data-conversion-action="phone-call"
-                    >
+                    <a class="hvac-lp-contact-option js-phone-cta" href="tel:+19152213516"
+                        data-conversion-action="phone-call">
                         <span class="hvac-lp-contact-option-label">
                             Call for Service
                         </span>
@@ -1160,10 +1119,7 @@ include '../includes/header.php';
 
             </div>
 
-            <div
-                class="hvac-lp-form-shell"
-                data-form-context="HVAC Google Ads Landing Page"
-            >
+            <div class="hvac-lp-form-shell" data-form-context="HVAC Google Ads Landing Page">
 
                 <div class="hvac-lp-form-heading">
 
@@ -1235,18 +1191,12 @@ include '../includes/header.php';
 
             <div class="hvac-lp-final-actions">
 
-                <a
-                    class="hvac-lp-button hvac-lp-button-light js-phone-cta"
-                    href="tel:+19152213516"
-                    data-conversion-action="phone-call"
-                >
+                <a class="hvac-lp-button hvac-lp-button-light js-phone-cta" href="tel:+19152213516"
+                    data-conversion-action="phone-call">
                     Call (915) 221-3516
                 </a>
 
-                <a
-                    class="hvac-lp-button hvac-lp-button-outline-light"
-                    href="#schedule-service"
-                >
+                <a class="hvac-lp-button hvac-lp-button-outline-light" href="#schedule-service">
                     Request Service
                 </a>
 
@@ -1261,30 +1211,20 @@ include '../includes/header.php';
          MOBILE STICKY CONVERSION BAR
     ========================================================== -->
 
-    <div
-        class="hvac-lp-mobile-bar"
-        aria-label="HVAC contact options"
-    >
+    <div class="hvac-lp-mobile-bar" aria-label="HVAC contact options">
 
-        <a
-            class="hvac-lp-mobile-call js-phone-cta"
-            href="tel:+19152213516"
-            data-conversion-action="phone-call"
-        >
+        <a class="hvac-lp-mobile-call js-phone-cta" href="tel:+19152213516" data-conversion-action="phone-call">
             <span aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z"/>
+                    <path
+                        d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2Z" />
                 </svg>
             </span>
 
             Call Now
         </a>
 
-        <a
-            class="hvac-lp-mobile-form"
-            href="#schedule-service"
-            data-conversion-action="form-scroll"
-        >
+        <a class="hvac-lp-mobile-form" href="#schedule-service" data-conversion-action="form-scroll">
             Request Service
         </a>
 
@@ -1327,10 +1267,7 @@ include '../includes/header.php';
 }
 </script>
 
-<script
-    src="/assets/js/hvac-landing.js"
-    defer
-></script>
+<script src="/assets/js/hvac-landing.js" defer></script>
 
 <?php
 
