@@ -57,7 +57,7 @@
    * another filename.
    */
     --roof-image:
-        url("/assets/real-estate.png");
+        url("/assets/real_estate.png");
 
     position: relative;
 
