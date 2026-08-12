@@ -150,6 +150,7 @@ select {
   display: flex;
   align-items: center;
   gap: 34px;
+  z-index: 10;
 }
 
 .main-nav a {
