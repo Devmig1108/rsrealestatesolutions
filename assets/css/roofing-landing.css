@@ -16,7 +16,9 @@
 /* ==========================================================================
    PAGE VARIABLES
    ========================================================================== */
-
+.roof-landing-body > .nav-toggle-label{
+    display: none;
+}
 .roof-lp {
 
     /* Images */
@@ -2845,6 +2847,7 @@
 
 
     .roof-lp-hero-copy {
+        margin-top: 40px;
         max-width: 780px;
     }
 
