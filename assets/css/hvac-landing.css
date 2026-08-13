@@ -646,7 +646,7 @@ body.hvac-landing-body .site-header .header-actions {
 }
 
 .hvac-lp-button-dark {
-    color: var(--hvac-white);
+    color: var(--hvac-white) !important;
     background: var(--hvac-navy);
 }
 
