@@ -131,7 +131,7 @@ include '../includes/header.php';
     <section class="hvac-lp-section hvac-lp-service" id="repair-options" aria-labelledby="service-title">
         <div class="container hvac-lp-service-grid">
             <div class="hvac-lp-service-image">
-                <img src="/assets/images/hvac/hvac-service-el-paso.webp"
+                <img src="/assets/hvac-service-el-paso.webp"
                      alt="Residential HVAC equipment being inspected"
                      width="1080" height="1080" loading="lazy">
             </div>
