@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 // Prefer a secured configuration value; retain the current recipient as a fallback.
 $recipient_email = defined('LEAD_RECIPIENT_EMAIL') && LEAD_RECIPIENT_EMAIL !== ''
     ? LEAD_RECIPIENT_EMAIL
-    : 'miguel@ervotechep.com';
+    : 'raul@nebulastat.com';
 
 function getClientIp(): string
 {
