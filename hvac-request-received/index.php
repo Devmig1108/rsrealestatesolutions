@@ -22,7 +22,19 @@ include '../includes/header.php';
 ?>
 
 <link rel="stylesheet" href="/assets/css/hvac-landing.css">
-<script>document.body.classList.add('hvac-landing-body');</script>
+<script>
+    document.body.classList.add('hvac-landing-body');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const headerCall = document.querySelector('.site-header .header-actions .button');
+
+        if (headerCall) {
+            headerCall.href = 'tel:+19152213516';
+            headerCall.textContent = 'Call (915) 221-3516';
+            headerCall.setAttribute('aria-label', 'Call RS Real Estate Solutions at 915-221-3516');
+        }
+    });
+</script>
 
 <main id="main-content" class="hvac-lp hvac-thanks">
     <section>

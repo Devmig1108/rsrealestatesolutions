@@ -20,6 +20,23 @@ body.hvac-landing-body {
     background: var(--hvac-white);
 }
 
+/* Keep paid-search visitors focused while retaining the real RS site header. */
+body.hvac-landing-body .site-header .main-nav,
+body.hvac-landing-body .site-header .social-links,
+body.hvac-landing-body .site-header .nav-toggle,
+body.hvac-landing-body .site-header .nav-toggle-label {
+    display: none !important;
+}
+
+body.hvac-landing-body .site-header .nav-wrap {
+    justify-content: space-between;
+}
+
+body.hvac-landing-body .site-header .header-actions {
+    display: flex;
+    margin-left: auto;
+}
+
 .hvac-lp,
 .hvac-lp * {
     box-sizing: border-box;
@@ -552,6 +569,30 @@ body.hvac-landing-body {
 
 .hvac-lp-service-image {
     position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(7, 12, 18, 0.16), rgba(7, 12, 18, 0.38)),
+        url("/assets/hvac.png") center / cover no-repeat,
+        var(--hvac-navy);
+    border-radius: 24px;
+    box-shadow: var(--hvac-shadow);
+}
+
+.hvac-lp-service-image.is-image-missing::before {
+    position: absolute;
+    z-index: 1;
+    right: 24px;
+    bottom: 22px;
+    padding: 8px 11px;
+    color: var(--hvac-white);
+    background: rgba(7, 12, 18, 0.78);
+    border-left: 3px solid var(--hvac-coral);
+    content: "Residential AC service";
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .hvac-lp-service-image::after {
@@ -573,7 +614,6 @@ body.hvac-landing-body {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 24px;
-    box-shadow: var(--hvac-shadow);
 }
 
 .hvac-lp-service-copy > p {
@@ -742,6 +782,23 @@ body.hvac-landing-body {
     gap: 15px;
 }
 
+/* Override the global interactive-surface treatment inside this light card. */
+.hvac-lp-form-shell .contact-form {
+    position: relative;
+    padding: 0 !important;
+    color: var(--hvac-ink) !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.hvac-lp-form-shell .contact-form::before,
+.hvac-lp-form-shell .contact-form::after {
+    display: none !important;
+    content: none !important;
+}
+
 .contact-form .form-honeypot {
     position: absolute !important;
     left: -10000px !important;
@@ -756,7 +813,7 @@ body.hvac-landing-body {
     gap: 12px;
 }
 
-.contact-form label {
+.hvac-lp-form-shell .contact-form label {
     display: grid;
     gap: 7px;
     color: #2e414b;
@@ -764,7 +821,7 @@ body.hvac-landing-body {
     font-weight: 800;
 }
 
-.contact-form label span {
+.hvac-lp-form-shell .contact-form label span {
     color: var(--hvac-muted);
     font-weight: 500;
 }
@@ -889,6 +946,18 @@ body.hvac-landing-body {
     background: var(--hvac-white);
 }
 
+.hvac-lp-final-cta .hvac-lp-button-light {
+    color: var(--hvac-navy-deep) !important;
+    background: #e0bb82 !important;
+    border-color: #e0bb82 !important;
+}
+
+.hvac-lp-final-cta .hvac-lp-button-light:hover {
+    color: var(--hvac-navy-deep) !important;
+    background: var(--hvac-white) !important;
+    border-color: var(--hvac-white) !important;
+}
+
 .hvac-lp-button-outline {
     color: var(--hvac-white);
     border-color: rgba(255,255,255,0.55);
@@ -985,6 +1054,16 @@ body.hvac-landing-body {
 
     .hvac-lp-hero {
         padding: 65px 0 55px;
+    }
+
+    body.hvac-landing-body .site-header .header-actions .button {
+        min-height: 44px;
+        padding-inline: 14px;
+        font-size: 0.72rem;
+    }
+
+    .hvac-lp-service-image {
+        min-height: 320px;
     }
 
     .hvac-lp-hero h1 {
