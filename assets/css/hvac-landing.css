@@ -1000,6 +1000,7 @@ body.hvac-landing-body .site-header .header-actions {
     border-top: 5px solid var(--hvac-coral);
     border-radius: 22px;
     box-shadow: var(--hvac-shadow);
+    margin-top: 90px;
 }
 
 .hvac-thanks-card h1 {
