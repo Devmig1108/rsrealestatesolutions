@@ -450,6 +450,11 @@ $safeService = htmlspecialchars($service, ENT_QUOTES, 'UTF-8');
 $safeProblem = htmlspecialchars($problem, ENT_QUOTES, 'UTF-8');
 $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
 $safeIp = htmlspecialchars(getClientIp(), ENT_QUOTES, 'UTF-8');
+$safeLocationDisplay = $safeLocation !== '' ? $safeLocation : 'Not provided';
+$safeEmailDisplay = $safeEmail !== '' ? $safeEmail : 'Not provided';
+$phoneHref = strlen($phoneDigits) === 10 ? '+1' . $phoneDigits : '+' . $phoneDigits;
+$safePhoneHref = htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8');
+$receivedAt = htmlspecialchars(date('M j, Y \a\t g:i A T'), ENT_QUOTES, 'UTF-8');
 
 $subject = $isHvacLandingForm
     ? "New Residential AC Request: {$problem} - {$name}"
@@ -460,21 +465,90 @@ $requestHeading = $isHvacLandingForm
     : 'New Property Consultation Request';
 
 $problemRow = $isHvacLandingForm
-    ? "<p><strong>AC Problem:</strong> {$safeProblem}</p>"
+    ? "
+        <tr>
+            <td style=\"padding:0 0 8px;color:#6b7280;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;\">AC problem</td>
+        </tr>
+        <tr>
+            <td style=\"padding:0 0 22px;color:#111827;font-size:18px;font-weight:700;\">{$safeProblem}</td>
+        </tr>"
     : '';
 
-$htmlBody = "
-    <h2>{$requestHeading}</h2>
-    <p><strong>Name:</strong> {$safeName}</p>
-    <p><strong>Phone:</strong> {$safePhone}</p>
-    <p><strong>Email:</strong> {$safeEmail}</p>
-    <p><strong>Property Location:</strong> {$safeLocation}</p>
-    <p><strong>Service Requested:</strong> {$safeService}</p>
-    {$problemRow}
-    <p><strong>Additional Details:</strong><br>{$safeMessage}</p>
-    <hr>
-    <p style=\"font-size:12px;color:#666;\"><strong>Submitted IP:</strong> {$safeIp}</p>
-";
+$htmlBody = "<!doctype html>
+<html lang=\"en\">
+<body style=\"margin:0;padding:0;background:#edf0f2;font-family:Arial,Helvetica,sans-serif;color:#111827;\">
+    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#edf0f2;\">
+        <tr>
+            <td align=\"center\" style=\"padding:30px 12px;\">
+                <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:640px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 12px 35px rgba(7,12,18,.12);\">
+                    <tr>
+                        <td style=\"padding:26px 30px;background:#070c12;border-top:5px solid #c89b5b;\">
+                            <div style=\"color:#e0bb82;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;\">RS Real Estate Solutions</div>
+                            <h1 style=\"margin:9px 0 0;color:#ffffff;font-size:25px;line-height:1.25;\">{$requestHeading}</h1>
+                            <p style=\"margin:8px 0 0;color:#c8cfd4;font-size:13px;\">Received {$receivedAt}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=\"padding:30px;\">
+                            <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">
+                                <tr>
+                                    <td style=\"padding:0 0 7px;color:#6b7280;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;\">Customer</td>
+                                </tr>
+                                <tr>
+                                    <td style=\"padding:0 0 6px;color:#111827;font-size:24px;font-weight:700;\">{$safeName}</td>
+                                </tr>
+                                <tr>
+                                    <td style=\"padding:0 0 22px;\">
+                                        <a href=\"tel:{$safePhoneHref}\" style=\"display:inline-block;padding:13px 19px;color:#070c12;background:#e0bb82;border-radius:8px;font-size:17px;font-weight:700;text-decoration:none;\">Call {$safePhone}</a>
+                                    </td>
+                                </tr>
+                                {$problemRow}
+                                <tr>
+                                    <td style=\"padding:18px 0;border-top:1px solid #e5e7eb;\">
+                                        <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">
+                                            <tr>
+                                                <td width=\"50%\" valign=\"top\" style=\"padding:0 12px 0 0;\">
+                                                    <div style=\"color:#6b7280;font-size:11px;font-weight:700;text-transform:uppercase;\">Location</div>
+                                                    <div style=\"margin-top:6px;color:#111827;font-size:15px;line-height:1.45;\">{$safeLocationDisplay}</div>
+                                                </td>
+                                                <td width=\"50%\" valign=\"top\" style=\"padding:0 0 0 12px;\">
+                                                    <div style=\"color:#6b7280;font-size:11px;font-weight:700;text-transform:uppercase;\">Email</div>
+                                                    <div style=\"margin-top:6px;color:#111827;font-size:15px;line-height:1.45;word-break:break-word;\">{$safeEmailDisplay}</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=\"padding:20px 0 0;border-top:1px solid #e5e7eb;\">
+                                        <div style=\"color:#6b7280;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;\">Additional details</div>
+                                        <div style=\"margin-top:9px;padding:16px;color:#26323c;background:#f6f7f8;border-left:4px solid #c89b5b;border-radius:4px;font-size:15px;line-height:1.6;\">{$safeMessage}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style=\"padding:18px 30px;color:#7a858e;background:#f6f7f8;border-top:1px solid #e5e7eb;font-size:11px;line-height:1.5;\">
+                            Service: {$safeService} &nbsp;•&nbsp; Submission source: Website &nbsp;•&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>";
+
+$textBody = "{$requestHeading}\n\n"
+    . "Customer: {$name}\n"
+    . "Phone: {$phone}\n"
+    . ($isHvacLandingForm ? "AC problem: {$problem}\n" : '')
+    . "Location: " . ($location !== '' ? $location : 'Not provided') . "\n"
+    . "Email: " . ($email !== '' ? $email : 'Not provided') . "\n"
+    . "Service: {$service}\n\n"
+    . "Additional details:\n{$message}\n\n"
+    . "Received: " . date('M j, Y \a\t g:i A T');
 
 $payload = json_encode([
     "from" => [
@@ -491,6 +565,7 @@ $payload = json_encode([
     ],
     "subject" => $subject,
     "htmlbody" => $htmlBody,
+    "textbody" => $textBody,
     "bounce_address" => "bounce@bounce-zem.rsrealestatesolutionsep.com" // Ensure this bounce domain is configured
 ]);
 
