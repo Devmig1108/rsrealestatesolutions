@@ -7,48 +7,12 @@ $ogTitle = 'Residential AC Repair in El Paso | RS Real Estate Solutions';
 $ogDescription = 'Request residential AC repair in El Paso. Call during weekday business hours or request a same-day callback.';
 $ogImage = 'https://rsrealestatesolutionsep.com/assets/images/hvac/hvac-service-el-paso.webp';
 $robots = 'noindex, nofollow';
+
+include '../includes/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
-    <meta name="description" content="<?= htmlspecialchars($metaDescription, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta name="robots" content="<?= htmlspecialchars($robots, ENT_QUOTES, 'UTF-8'); ?>">
-    <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= htmlspecialchars($ogTitle, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:description" content="<?= htmlspecialchars($ogDescription, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
-    <meta property="og:image" content="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8'); ?>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/hvac-landing.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHQY4LSFF4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XHQY4LSFF4');
-        gtag('config', 'AW-18355036842/ZBqzCJjtu98cEKrFrrBE', {
-            'phone_conversion_number': '(915) 221-3516'
-        });
-    </script>
-</head>
-<body class="hvac-landing-body">
-
-<a class="hvac-lp-skip" href="#main-content">Skip to content</a>
-<header class="hvac-lp-header">
-    <div class="container">
-        <a class="hvac-lp-brand" href="/" aria-label="RS Real Estate Solutions home">
-            <strong>RS</strong><span>Real Estate Solutions</span>
-        </a>
-        <a class="hvac-lp-header-call" href="tel:+19152213516"><span>Weekday business hours</span><strong>(915) 221-3516</strong></a>
-    </div>
-</header>
+<link rel="stylesheet" href="/assets/css/hvac-landing.css">
+<script>document.body.classList.add('hvac-landing-body');</script>
 
 <main id="main-content" class="hvac-lp">
     <section class="hvac-lp-hero" aria-labelledby="hvac-hero-title">
@@ -229,14 +193,6 @@ $robots = 'noindex, nofollow';
     </div>
 </main>
 
-<footer class="hvac-lp-footer">
-    <div class="container">
-        <strong>RS Real Estate Solutions</strong>
-        <a href="tel:+19152213516">(915) 221-3516</a>
-        <span>El Paso, Texas</span>
-    </div>
-</footer>
-
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -249,5 +205,4 @@ $robots = 'noindex, nofollow';
 }
 </script>
 
-</body>
-</html>
+<?php include '../includes/footer.php'; ?>
