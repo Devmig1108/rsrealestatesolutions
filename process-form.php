@@ -1,6 +1,6 @@
 <?php
 
-$formDebug = true;
+$formDebug = false;
 
 function loadSecureEnvForProcessForm(): void
 {
@@ -42,8 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-// Updated Recipient for RS Real Estate
-$recipient_email = "raul@nebulastat.com";
+// Prefer a secured configuration value; retain the current recipient as a fallback.
+$recipient_email = defined('LEAD_RECIPIENT_EMAIL') && LEAD_RECIPIENT_EMAIL !== ''
+    ? LEAD_RECIPIENT_EMAIL
+    : 'miguel@ervotechep.com';
 
 function getClientIp(): string
 {
@@ -75,17 +77,26 @@ function getReturnUrl(): string
 
 function redirectWithStatus(string $status, ?string $reason = null): void
 {
+    $formContext = isset($_POST['form_context']) && !is_array($_POST['form_context'])
+        ? trim((string) $_POST['form_context'])
+        : '';
+
+    if ($status === 'success' && $formContext === 'Residential AC Repair Google Ads') {
+        header('Location: /hvac-request-received/', true, 303);
+        exit;
+    }
+
     $returnUrl = getReturnUrl();
 
     $query = [
         'status' => $status,
     ];
 
-    if ($reason) {
+    if ($reason && $GLOBALS['formDebug']) {
         $query['debug_reason'] = $reason;
     }
 
-    header("Location: " . $returnUrl . "?" . http_build_query($query));
+    header("Location: " . $returnUrl . "?" . http_build_query($query) . '#request-service', true, 303);
     exit;
 }
 
@@ -106,7 +117,7 @@ function getPostDebugSummary(): array
 
 function logSubmissionEvent(string $type, string $reason, array $extra = []): void
 {
-    $logFile = __DIR__ . '/form-debug-log.jsonl';
+    $logFile = sys_get_temp_dir() . '/rsrealestate-form-events.jsonl';
 
     $entry = [
         'time' => date('c'),
@@ -131,11 +142,7 @@ function blockedExit(string $reason, array $extra = []): void
 
     logSubmissionEvent('blocked', $reason, $extra);
 
-    if ($formDebug) {
-        redirectWithStatus('error', $reason);
-    }
-
-    redirectWithStatus('success');
+    redirectWithStatus('error', $formDebug ? $reason : null);
 }
 
 function verifySignedFormToken(string $token, int $maxAgeSeconds = 7200): bool
@@ -349,6 +356,9 @@ $phone = postFirst(['phone', 'phoneNumber', 'telephone', 'tel'], 30);
 $location = postFirst(['location', 'propertyLocation', 'property_location'], 200);
 $email = filter_var(trim((string) ($_POST['email'] ?? $_POST['emailAddress'] ?? '')), FILTER_SANITIZE_EMAIL);
 $service = postFirst(['service', 'serviceNeeded', 'service_type'], 100);
+$problem = postFirst(['problem', 'ac_problem', 'issue'], 120);
+$formContext = postFirst(['form_context'], 120);
+$isHvacLandingForm = $formContext === 'Residential AC Repair Google Ads';
 $message = postFirst(['message', 'comments', 'details'], 1500);
 
 if (empty($message)) {
@@ -358,11 +368,12 @@ if (empty($message)) {
 /**
  * 5. Validate required fields
  */
-if (empty($name) || empty($phone) || empty($service)) {
+if (empty($name) || empty($phone) || empty($service) || ($isHvacLandingForm && empty($problem))) {
     logSubmissionEvent('validation_error', 'missing_required_fields', [
         'name_empty' => empty($name),
         'phone_empty' => empty($phone),
         'service_empty' => empty($service),
+        'problem_empty' => empty($problem),
     ]);
 
     redirectWithStatus('error', 'missing_required_fields');
@@ -436,19 +447,31 @@ $safePhone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
 $safeLocation = htmlspecialchars($location, ENT_QUOTES, 'UTF-8');
 $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
 $safeService = htmlspecialchars($service, ENT_QUOTES, 'UTF-8');
+$safeProblem = htmlspecialchars($problem, ENT_QUOTES, 'UTF-8');
 $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
 $safeIp = htmlspecialchars(getClientIp(), ENT_QUOTES, 'UTF-8');
 
-$subject = "New Property Consultation: {$service} - {$name}";
+$subject = $isHvacLandingForm
+    ? "New Residential AC Request: {$problem} - {$name}"
+    : "New Property Consultation: {$service} - {$name}";
+
+$requestHeading = $isHvacLandingForm
+    ? 'New Residential AC Service Request'
+    : 'New Property Consultation Request';
+
+$problemRow = $isHvacLandingForm
+    ? "<p><strong>AC Problem:</strong> {$safeProblem}</p>"
+    : '';
 
 $htmlBody = "
-    <h2>New Property Consultation Request</h2>
+    <h2>{$requestHeading}</h2>
     <p><strong>Name:</strong> {$safeName}</p>
     <p><strong>Phone:</strong> {$safePhone}</p>
     <p><strong>Email:</strong> {$safeEmail}</p>
     <p><strong>Property Location:</strong> {$safeLocation}</p>
     <p><strong>Service Requested:</strong> {$safeService}</p>
-    <p><strong>Property Details/Message:</strong><br>{$safeMessage}</p>
+    {$problemRow}
+    <p><strong>Additional Details:</strong><br>{$safeMessage}</p>
     <hr>
     <p style=\"font-size:12px;color:#666;\"><strong>Submitted IP:</strong> {$safeIp}</p>
 ";
