@@ -144,34 +144,32 @@ include '../includes/header.php';
             </div>
 
 
-            <!-- HERO FORM -->
+            <aside class="roof-lp-hero-card" aria-labelledby="roof-hero-card-title">
+                <p class="roof-lp-card-label">Request roofing help</p>
 
-            <aside class="roof-lp-hero-form">
+                <h2 id="roof-hero-card-title">
+                    Start with what you’re seeing.
+                </h2>
 
-                <div class="roof-lp-form-heading">
-
-                    <p>Residential Roofing Request</p>
-
-                    <h2>
-                        Tell Us What’s Happening.
-                    </h2>
-
-                    <span>
-                        Give us a few details about the property and the
-                        roofing issue.
-                    </span>
-
-                </div>
-
-                <?php
-                include '../includes/contact-form-roofing.php';
-                ?>
-
-                <p class="roof-lp-form-note">
-                    By submitting this form, you are requesting contact from
-                    RS Real Estate Solutions regarding roofing services.
+                <p>
+                    You do not need to diagnose the roof yourself. Describe the
+                    visible problem and we’ll discuss the appropriate next step.
                 </p>
 
+                <div class="roof-lp-issue-list" aria-label="Common roofing concerns">
+                    <span>Leaks or water stains</span>
+                    <span>Missing materials</span>
+                    <span>Wind or storm damage</span>
+                    <span>Aging roof concerns</span>
+                </div>
+
+                <a class="roof-lp-card-link" href="#roof-request">
+                    Describe my roof problem <span aria-hidden="true">→</span>
+                </a>
+
+                <p class="roof-lp-card-note">
+                    No payment is required to submit a request.
+                </p>
             </aside>
 
         </div>

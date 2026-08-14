@@ -337,10 +337,10 @@
 .roof-lp-hero {
     position: relative;
 
-    min-height: 820px;
+    min-height: 720px;
 
     padding:
-        clamp(130px, 11vw, 175px) 0 clamp(80px, 8vw, 110px);
+        clamp(105px, 9vw, 140px) 0 clamp(70px, 7vw, 95px);
 
     overflow: hidden;
 
@@ -453,7 +453,7 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.1fr) minmax(390px, .66fr);
+        minmax(0, 1.08fr) minmax(350px, .62fr);
 
     gap:
         clamp(55px, 7vw, 100px);
@@ -511,7 +511,7 @@
         serif;
 
     font-size:
-        clamp(4rem, 6.7vw, 7rem);
+        clamp(3.7rem, 5.8vw, 6.25rem);
 
     font-weight: 600;
 
@@ -682,25 +682,25 @@
 
 
 /* ==========================================================================
-   HERO FORM
+   HERO ISSUE CARD
    ========================================================================== */
 
-.roof-lp-hero-form {
+.roof-lp-hero-card {
     position: relative;
 
     padding:
-        clamp(29px, 3.6vw, 44px);
+        clamp(30px, 3.6vw, 44px);
 
     overflow: hidden;
 
     color:
-        var(--roof-black);
+        var(--roof-white);
 
     background:
-        rgba(249, 250, 251, .97);
+        rgba(11, 18, 24, .89);
 
     border:
-        1px solid rgba(255, 255, 255, .72);
+        1px solid rgba(255, 255, 255, .16);
 
     border-radius:
         var(--roof-radius-lg);
@@ -713,7 +713,7 @@
 }
 
 
-.roof-lp-hero-form::before {
+.roof-lp-hero-card::before {
     content: "";
 
     position: absolute;
@@ -731,7 +731,7 @@
 }
 
 
-.roof-lp-hero-form::after {
+.roof-lp-hero-card::after {
     content: "";
 
     position: absolute;
@@ -745,7 +745,7 @@
     height: 245px;
 
     border:
-        1px solid rgba(151, 111, 61, .10);
+        1px solid rgba(226, 194, 142, .13);
 
     transform:
         rotate(45deg);
@@ -2784,7 +2784,7 @@
 }
 
 
-.roof-lp-hero-form {
+.roof-lp-hero-card {
     animation:
         roofLpFormIn .82s .10s cubic-bezier(.16, 1, .3, 1) both;
 }
@@ -2852,8 +2852,8 @@
     }
 
 
-    .roof-lp-hero-form {
-        max-width: 680px;
+    .roof-lp-hero-card {
+        max-width: 600px;
     }
 
 
@@ -3085,10 +3085,10 @@
 
 
     /* ----------------------------------------------------------------------
-       Hero form
+       Hero issue card
        ---------------------------------------------------------------------- */
 
-    .roof-lp-hero-form {
+    .roof-lp-hero-card {
         padding:
             27px 21px;
 
@@ -3097,8 +3097,12 @@
     }
 
 
-    .roof-lp-form-heading h2 {
-        font-size: 2rem;
+    .roof-lp-hero-card h2 {
+        font-size: 2.15rem;
+    }
+
+    .roof-lp-issue-list {
+        grid-template-columns: 1fr;
     }
 
 
@@ -3459,7 +3463,7 @@
     }
 
 
-    .roof-lp-hero-form,
+    .roof-lp-hero-card,
     .roof-lp-form-shell {
         padding:
             24px 18px;
@@ -3500,6 +3504,73 @@
     height: 1px !important;
     overflow: hidden !important;
     clip: rect(0 0 0 0) !important;
+}
+
+.roof-lp-card-label {
+    margin: 0 0 13px;
+    color: var(--roof-gold-light);
+    font-size: .63rem;
+    font-weight: 850;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+}
+
+.roof-lp-hero-card h2 {
+    max-width: 420px;
+    margin: 0 0 15px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.04;
+}
+
+.roof-lp-hero-card > p:not(.roof-lp-card-label, .roof-lp-card-note) {
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, .70);
+    font-size: .86rem;
+    line-height: 1.65;
+}
+
+.roof-lp-issue-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.roof-lp-issue-list span {
+    padding: 10px 11px;
+    color: rgba(255, 255, 255, .84);
+    background: rgba(255, 255, 255, .045);
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: var(--roof-radius-sm);
+    font-size: .72rem;
+    font-weight: 700;
+}
+
+.roof-lp-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--roof-gold-light) !important;
+    font-size: .77rem;
+    font-weight: 850;
+    letter-spacing: .045em;
+}
+
+.roof-lp-card-link span {
+    transition: transform .2s ease;
+}
+
+.roof-lp-card-link:hover span {
+    transform: translateX(4px);
+}
+
+.roof-lp-card-note {
+    margin: 21px 0 0;
+    padding-top: 18px;
+    color: rgba(255, 255, 255, .43);
+    border-top: 1px solid rgba(255, 255, 255, .10);
+    font-size: .65rem;
 }
 
 .roof-lp .form-privacy,
@@ -3560,6 +3631,16 @@
 
 .roof-thanks-card .roof-lp-actions {
     justify-content: center;
+}
+
+@media (max-width: 700px) {
+    .roof-lp-hero-card h2 {
+        font-size: 2.15rem;
+    }
+
+    .roof-lp-issue-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
