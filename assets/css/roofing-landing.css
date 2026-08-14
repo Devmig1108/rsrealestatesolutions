@@ -3494,6 +3494,74 @@
    REDUCED MOTION
    ========================================================================== */
 
+.roof-lp .form-honeypot {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+}
+
+.roof-lp .form-privacy,
+.roof-lp .form-config-error,
+.roof-lp .form-feedback {
+    margin: 14px 0 0;
+    font-size: .75rem;
+    line-height: 1.55;
+}
+
+.roof-lp .form-config-error,
+.roof-lp .form-feedback-error {
+    padding: 12px 14px;
+    color: #7f1d1d;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: var(--roof-radius-sm);
+}
+
+.roof-thanks {
+    min-height: 78vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(90px, 10vw, 150px) 24px;
+    color: var(--roof-white);
+    background:
+        linear-gradient(135deg, rgba(5, 8, 11, .96), rgba(16, 24, 32, .92)),
+        var(--roof-lp-hero-image) center / cover;
+}
+
+.roof-thanks-card {
+    width: min(720px, 100%);
+    padding: clamp(34px, 6vw, 64px);
+    text-align: center;
+    background: rgba(11, 18, 24, .92);
+    border: 1px solid var(--roof-line-dark);
+    border-top: 4px solid var(--roof-gold);
+    border-radius: var(--roof-radius-lg);
+    box-shadow: var(--roof-shadow-heavy);
+}
+
+.roof-thanks-card h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    line-height: 1.02;
+}
+
+.roof-thanks-card h1 span {
+    display: block;
+    color: var(--roof-gold-light);
+}
+
+.roof-thanks-card > p:not(.roof-lp-eyebrow):not(.roof-lp-call-note) {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    color: var(--roof-light);
+}
+
+.roof-thanks-card .roof-lp-actions {
+    justify-content: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
 
     .roof-lp *,

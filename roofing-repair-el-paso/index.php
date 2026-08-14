@@ -16,15 +16,16 @@
 
 $pageTitle = 'Roof Repair in El Paso, TX | RS Real Estate Solutions';
 
-$metaDescription = 'Need roof repair in El Paso? Contact RS Real Estate Solutions for help with roof leaks, visible damage, storm concerns, replacement needs, and roofing service.';
+$metaDescription = 'Need residential roof repair in El Paso? Request help with leaks, missing materials, storm damage, or an aging roof from RS Real Estate Solutions.';
 
-$canonicalUrl = 'https://rsrealstatesolutions.com/roof-repair-el-paso/';
+$canonicalUrl = 'https://rsrealestatesolutionsep.com/roof-repair-el-paso/';
 
 $ogTitle = 'Roof Repair in El Paso | RS Real Estate Solutions';
 
 $ogDescription = 'Request roofing service for leaks, damage, aging roofs, replacement needs, and other roofing concerns in El Paso.';
 
-$robots = 'noindex, nofollow';
+$ogImage = 'https://rsrealestatesolutionsep.com/assets/roofing-landing-hero.jpg';
+$robots = 'noindex, follow';
 
 include '../includes/header.php';
 
@@ -37,6 +38,14 @@ include '../includes/header.php';
 
 <script>
     document.body.classList.add('roof-landing-body');
+    document.addEventListener('DOMContentLoaded', function () {
+        const headerCall = document.querySelector('.site-header .header-actions .button');
+        if (headerCall) {
+            headerCall.href = 'tel:+19152213516';
+            headerCall.textContent = 'Call (915) 221-3516';
+            headerCall.setAttribute('aria-label', 'Call RS Real Estate Solutions at 915-221-3516');
+        }
+    });
 </script>
 
 
@@ -62,19 +71,18 @@ include '../includes/header.php';
             <div class="roof-lp-hero-copy">
 
                 <p class="roof-lp-location">
-                    Roofing Service · El Paso, TX
+                    Residential Roof Repair · El Paso, TX
                 </p>
 
                 <h1>
-                    Roof Damage?
-                    <span>Don’t Let It Get Worse.</span>
+                    Roof Leak or Damage?
+                    <span>Request Help in El Paso.</span>
                 </h1>
 
                 <p class="roof-lp-hero-lead">
-                    Leaks, damaged roofing materials, storm concerns, and
-                    aging roofs can quickly become larger property problems.
-                    Contact RS Real Estate Solutions to request professional
-                    roofing service in El Paso.
+                    Tell us what you are seeing. RS Real Estate Solutions can
+                    review your residential roofing concern and discuss repair,
+                    inspection, or replacement options with you.
                 </p>
 
                 <div class="roof-lp-signals">
@@ -91,12 +99,12 @@ include '../includes/header.php';
 
                     <div>
                         <span>✓</span>
-                        Repair or replacement needs
+                        Repair first, replacement if needed
                     </div>
 
                     <div>
                         <span>✓</span>
-                        Residential & commercial
+                        Residential properties
                     </div>
 
                 </div>
@@ -124,13 +132,13 @@ include '../includes/header.php';
                         class="roof-lp-button roof-lp-button-outline"
                         href="#roof-request"
                     >
-                        Request Roofing Service
+                        Request a Roofing Callback
                     </a>
 
                 </div>
 
                 <p class="roof-lp-call-note">
-                    Calling is the fastest way to discuss your roofing concern.
+                    No payment is collected through this request form.
                 </p>
 
             </div>
@@ -142,7 +150,7 @@ include '../includes/header.php';
 
                 <div class="roof-lp-form-heading">
 
-                    <p>Roofing Service Request</p>
+                    <p>Residential Roofing Request</p>
 
                     <h2>
                         Tell Us What’s Happening.
@@ -156,7 +164,7 @@ include '../includes/header.php';
                 </div>
 
                 <?php
-                include '../includes/contact-form.php';
+                include '../includes/contact-form-roofing.php';
                 ?>
 
                 <p class="roof-lp-form-note">
@@ -186,7 +194,7 @@ include '../includes/header.php';
 
             <div>
                 <strong>PROPERTY</strong>
-                <span>Residential & commercial</span>
+                <span>Residential roofing</span>
             </div>
 
             <div>
@@ -208,7 +216,7 @@ include '../includes/header.php';
          DAMAGE RECOGNITION
     ========================================================== -->
 
-    <section class="roof-lp-section roof-lp-damage">
+    <section class="roof-lp-section roof-lp-damage" id="common-roof-problems">
 
         <div class="container">
 
@@ -336,7 +344,7 @@ include '../includes/header.php';
          REPAIR VS REPLACEMENT
     ========================================================== -->
 
-    <section class="roof-lp-section roof-lp-options">
+    <section class="roof-lp-section roof-lp-options" id="repair-options">
 
         <div class="container">
 
@@ -347,8 +355,8 @@ include '../includes/header.php';
                 </p>
 
                 <h2>
-                    The Goal Isn’t to Sell You a Roof.
-                    <span>It’s to Understand What the Property Needs.</span>
+                    Start With the Problem.
+                    <span>Then Discuss the Right Scope.</span>
                 </h2>
 
             </div>
@@ -446,7 +454,7 @@ include '../includes/header.php';
          WHY RS
     ========================================================== -->
 
-    <section class="roof-lp-section roof-lp-why">
+    <section class="roof-lp-section roof-lp-why" id="why-rs">
 
         <div class="container roof-lp-why-grid">
 
@@ -457,15 +465,14 @@ include '../includes/header.php';
                 </p>
 
                 <h2>
-                    More Than a Roofing
-                    <span>Point of View.</span>
+                    A Property-Focused
+                    <span>Roofing Conversation.</span>
                 </h2>
 
                 <p class="roof-lp-why-lead">
-                    Because RS works across construction, remodeling, real
-                    estate, HVAC, and other property services, roofing can be
-                    considered in the larger context of the property rather
-                    than as an isolated component.
+                    RS approaches a roof concern in the context of the home,
+                    the visible damage, and the owner’s next step. Start with
+                    the condition—not a predetermined sale.
                 </p>
 
                 <div class="roof-lp-why-list">
@@ -484,10 +491,10 @@ include '../includes/header.php';
                     <article>
                         <span>02</span>
                         <div>
-                            <h3>Residential & Commercial</h3>
+                            <h3>Residential Roofing</h3>
                             <p>
-                                Request service for homes, businesses,
-                                investments, or managed properties.
+                                Request help for an owner-occupied home,
+                                rental house, or residential investment.
                             </p>
                         </div>
                     </article>
@@ -549,7 +556,7 @@ include '../includes/header.php';
          PROCESS
     ========================================================== -->
 
-    <section class="roof-lp-section roof-lp-process">
+    <section class="roof-lp-section roof-lp-process" id="how-it-works">
 
         <div class="container">
 
@@ -695,14 +702,14 @@ include '../includes/header.php';
                 <details>
 
                     <summary>
-                        Do you work on commercial properties?
+                        Do you work on residential properties?
                         <span></span>
                     </summary>
 
                     <div>
                         <p>
-                            Roofing service can be requested for both
-                            residential and commercial properties.
+                            Yes. This page is for residential roofing requests,
+                            including owner-occupied homes and rental houses.
                         </p>
                     </div>
 
@@ -796,7 +803,7 @@ include '../includes/header.php';
 
                     <div>
                         <span>Property Types</span>
-                        <p>Residential and commercial</p>
+                        <p>Residential homes and rental houses</p>
                     </div>
 
                 </div>
@@ -808,7 +815,7 @@ include '../includes/header.php';
                 <header>
 
                     <p>
-                        Roofing Service Request
+                        Residential Roofing Request
                     </p>
 
                     <h3>
@@ -823,7 +830,7 @@ include '../includes/header.php';
                 </header>
 
                 <?php
-                include '../includes/contact-form.php';
+                include '../includes/contact-form-roofing.php';
                 ?>
 
                 <p class="roof-lp-form-disclaimer">
@@ -849,7 +856,7 @@ include '../includes/header.php';
             <div>
 
                 <span>
-                    Roofing Service · El Paso
+                    Residential Roof Repair · El Paso
                 </span>
 
                 <h2>
@@ -904,18 +911,13 @@ include '../includes/header.php';
             href="#roof-request"
             class="roof-lp-mobile-request"
         >
-            Request Roofing Service
+            Request a Callback
         </a>
 
     </div>
 
 </main>
 
-
-<script
-    src="/assets/js/roofing-landing.js"
-    defer
-></script>
 
 <?php
 include '../includes/footer.php';
