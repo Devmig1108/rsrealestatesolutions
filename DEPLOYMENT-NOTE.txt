@@ -1,0 +1,19 @@
+RS Real Estate Solutions - Full Updated Project
+
+This package is a complete copy of the project supplied in this chat, with the new
+organic roofing pages integrated:
+
+- /roof-repair-el-paso/index.php
+- /roof-replacement-el-paso/index.php
+- /assets/css/roofing-detail.css
+
+Existing HVAC pages, roofing service hub, paid roofing landing page, includes,
+forms, assets, scripts, and shared site files are also included.
+
+The .git directory was intentionally excluded from this deployment package.
+
+IMPORTANT:
+The config/secure_env.php file in this package is the same configuration that was
+present in the project you uploaded. If your live server has newer credentials or
+environment-specific settings, preserve the live server version before replacing
+the project.

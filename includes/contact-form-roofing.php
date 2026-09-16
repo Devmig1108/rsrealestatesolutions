@@ -12,6 +12,11 @@ $signature = $tokenSecret !== '' ? hash_hmac('sha256', $payload, $tokenSecret) :
 $formToken = base64_encode($issuedAt . '.' . $nonce . '.' . $signature);
 $turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
 $formIsConfigured = $tokenSecret !== '' && $turnstileSiteKey !== '';
+
+// Optional page-level overrides. Existing landing pages keep the original defaults.
+$roofFormService = $roofFormService ?? 'Roofing Services';
+$roofFormContext = $roofFormContext ?? 'Residential Roof Repair Google Ads';
+$roofSubmitText = $roofSubmitText ?? 'Request my roofing callback';
 ?>
 
 <?php if (empty($GLOBALS['rsTurnstileScriptLoaded'])): ?>
@@ -27,8 +32,8 @@ $formIsConfigured = $tokenSecret !== '' && $turnstileSiteKey !== '';
     </div>
 
     <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8'); ?>">
-    <input type="hidden" name="service" value="Roofing Services">
-    <input type="hidden" name="form_context" value="Residential Roof Repair Google Ads">
+    <input type="hidden" name="service" value="<?= htmlspecialchars($roofFormService, ENT_QUOTES, 'UTF-8'); ?>">
+    <input type="hidden" name="form_context" value="<?= htmlspecialchars($roofFormContext, ENT_QUOTES, 'UTF-8'); ?>">
 
     <div class="field-row">
         <label>Full name *
@@ -70,7 +75,7 @@ $formIsConfigured = $tokenSecret !== '' && $turnstileSiteKey !== '';
         <p class="form-config-error">Form verification is not configured. Please call (915) 221-3516.</p>
     <?php endif; ?>
 
-    <button type="submit"<?= $formIsConfigured ? '' : ' disabled'; ?>>Request my roofing callback</button>
+    <button type="submit"<?= $formIsConfigured ? '' : ' disabled'; ?>><?= htmlspecialchars($roofSubmitText, ENT_QUOTES, 'UTF-8'); ?></button>
     <p class="form-privacy">By submitting, you agree that RS Real Estate Solutions may contact you about this roofing request. No payment is collected through this form.</p>
 
     <?php if (isset($_GET['status']) && $_GET['status'] !== 'success'): ?>

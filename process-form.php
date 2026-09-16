@@ -403,6 +403,7 @@ $allowedServices = [
     'Construction Services',
     'Real Estate Solutions',
     'HVAC Services',
+    'Roofing Services',
     'Not Sure Yet',
 ];
 

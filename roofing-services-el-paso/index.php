@@ -179,8 +179,8 @@ include '../includes/header.php';
                         problems affecting roof performance.
                     </p>
 
-                    <a href="#roofing-contact">
-                        Request Roof Repair →
+                    <a href="/roof-repair-el-paso/">
+                        Explore Roof Repair →
                     </a>
 
                 </article>
@@ -197,8 +197,8 @@ include '../includes/header.php';
                         the practical solution.
                     </p>
 
-                    <a href="#roofing-contact">
-                        Discuss Replacement →
+                    <a href="/roof-replacement-el-paso/">
+                        Explore Roof Replacement →
                     </a>
 
                 </article>
