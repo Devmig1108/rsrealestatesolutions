@@ -63,6 +63,7 @@ function getReturnUrl(): string
 
     $refererParts = parse_url($referer);
     $currentHost = $_SERVER['HTTP_HOST'] ?? '';
+    $currentHost = preg_replace('/:\d+$/', '', $currentHost);
 
     if (
         !$refererParts ||
@@ -82,11 +83,24 @@ function redirectWithStatus(string $status, ?string $reason = null): void
         : '';
 
     if ($status === 'success' && $formContext === 'Residential AC Repair Google Ads') {
-        header('Location: /hvac-request-received/', true, 303);
+        header('Location: /offers/hvac-repair-el-paso/request-received/', true, 303);
+        exit;
+    }
+
+    if ($status === 'success' && $formContext === 'Residential Roof Repair Google Ads') {
+        header('Location: /offers/roof-repair-el-paso/request-received/', true, 303);
         exit;
     }
 
     $returnUrl = getReturnUrl();
+
+    $returnAnchor = isset($_POST['form_return_anchor']) && !is_array($_POST['form_return_anchor'])
+        ? trim((string) $_POST['form_return_anchor'])
+        : '';
+
+    if ($returnAnchor !== '' && !preg_match('/^[A-Za-z0-9_-]{1,80}$/', $returnAnchor)) {
+        $returnAnchor = '';
+    }
 
     $query = [
         'status' => $status,
@@ -96,7 +110,9 @@ function redirectWithStatus(string $status, ?string $reason = null): void
         $query['debug_reason'] = $reason;
     }
 
-    header("Location: " . $returnUrl . "?" . http_build_query($query) . '#request-service', true, 303);
+    $fragment = $returnAnchor !== '' ? '#' . $returnAnchor : '';
+
+    header('Location: ' . $returnUrl . '?' . http_build_query($query) . $fragment, true, 303);
     exit;
 }
 
@@ -251,6 +267,11 @@ function rateLimit(int $limit = 15, int $windowSeconds = 600): bool
 
 function verifyTurnstile(string $token): bool
 {
+    if (!function_exists('curl_init')) {
+        error_log('Turnstile verification unavailable: PHP cURL extension is not enabled.');
+        return false;
+    }
+
     if (empty($token)) {
         error_log("Turnstile failed: missing cf-turnstile-response token.");
         return false;
@@ -359,6 +380,8 @@ $service = postFirst(['service', 'serviceNeeded', 'service_type'], 100);
 $problem = postFirst(['problem', 'ac_problem', 'issue'], 120);
 $formContext = postFirst(['form_context'], 120);
 $isHvacLandingForm = $formContext === 'Residential AC Repair Google Ads';
+$isRoofingLandingForm = $formContext === 'Residential Roof Repair Google Ads';
+$isAdLandingForm = $isHvacLandingForm || $isRoofingLandingForm;
 $message = postFirst(['message', 'comments', 'details'], 1500);
 
 if (empty($message)) {
@@ -368,7 +391,7 @@ if (empty($message)) {
 /**
  * 5. Validate required fields
  */
-if (empty($name) || empty($phone) || empty($service) || ($isHvacLandingForm && empty($problem))) {
+if (empty($name) || empty($phone) || empty($service) || ($isAdLandingForm && empty($problem))) {
     logSubmissionEvent('validation_error', 'missing_required_fields', [
         'name_empty' => empty($name),
         'phone_empty' => empty($phone),
@@ -448,6 +471,8 @@ $safePhone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
 $safeLocation = htmlspecialchars($location, ENT_QUOTES, 'UTF-8');
 $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
 $safeService = htmlspecialchars($service, ENT_QUOTES, 'UTF-8');
+$safeFormContext = htmlspecialchars($formContext, ENT_QUOTES, 'UTF-8');
+$safeFormContextDisplay = $safeFormContext !== '' ? $safeFormContext : 'Website';
 $safeProblem = htmlspecialchars($problem, ENT_QUOTES, 'UTF-8');
 $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
 $safeIp = htmlspecialchars(getClientIp(), ENT_QUOTES, 'UTF-8');
@@ -459,20 +484,29 @@ $receivedAt = htmlspecialchars(date('M j, Y \a\t g:i A T'), ENT_QUOTES, 'UTF-8')
 
 $subject = $isHvacLandingForm
     ? "New Residential AC Request: {$problem} - {$name}"
-    : "New Property Consultation: {$service} - {$name}";
+    : ($isRoofingLandingForm
+        ? "New Residential Roofing Request: {$problem} - {$name}"
+        : "New Property Consultation: {$service} - {$name}");
 
 $requestHeading = $isHvacLandingForm
     ? 'New Residential AC Service Request'
-    : 'New Property Consultation Request';
+    : ($isRoofingLandingForm
+        ? 'New Residential Roofing Service Request'
+        : 'New Property Consultation Request');
 
-$problemRow = $isHvacLandingForm
-    ? "
-        <tr>
-            <td style=\"padding:0 0 8px;color:#6b7280;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;\">AC problem</td>
-        </tr>
-        <tr>
-            <td style=\"padding:0 0 22px;color:#111827;font-size:18px;font-weight:700;\">{$safeProblem}</td>
-        </tr>"
+$hasProblemField = $problem !== '';
+
+$problemLabel = $isHvacLandingForm
+    ? 'AC problem'
+    : (($isRoofingLandingForm || $service === 'Roofing Services') ? 'Roofing concern' : 'Service concern');
+
+$problemRow = $hasProblemField
+    ? '<tr>'
+        . '<td style="padding:0 0 8px;color:#6b7280;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">' . $problemLabel . '</td>'
+        . '</tr>'
+        . '<tr>'
+        . '<td style="padding:0 0 22px;color:#111827;font-size:18px;font-weight:700;">' . $safeProblem . '</td>'
+        . '</tr>'
     : '';
 
 $htmlBody = "<!doctype html>
@@ -531,7 +565,7 @@ $htmlBody = "<!doctype html>
                     </tr>
                     <tr>
                         <td style=\"padding:18px 30px;color:#7a858e;background:#f6f7f8;border-top:1px solid #e5e7eb;font-size:11px;line-height:1.5;\">
-                            Service: {$safeService} &nbsp;•&nbsp; Submission source: Website &nbsp;•&nbsp;
+                            Service: {$safeService} &nbsp;•&nbsp; Submission source: {$safeFormContextDisplay} &nbsp;•&nbsp;
                         </td>
                     </tr>
                 </table>
@@ -544,7 +578,7 @@ $htmlBody = "<!doctype html>
 $textBody = "{$requestHeading}\n\n"
     . "Customer: {$name}\n"
     . "Phone: {$phone}\n"
-    . ($isHvacLandingForm ? "AC problem: {$problem}\n" : '')
+    . ($hasProblemField ? $problemLabel . ': ' . $problem . "\n" : '')
     . "Location: " . ($location !== '' ? $location : 'Not provided') . "\n"
     . "Email: " . ($email !== '' ? $email : 'Not provided') . "\n"
     . "Service: {$service}\n\n"
@@ -573,6 +607,11 @@ $payload = json_encode([
 if (!$payload) {
     error_log("ZeptoMail Payload JSON Error");
     redirectWithStatus('mail_error', 'payload_json_error');
+}
+
+if (!function_exists('curl_init')) {
+    error_log('ZeptoMail unavailable: PHP cURL extension is not enabled.');
+    redirectWithStatus('mail_error', 'php_curl_missing');
 }
 
 $ch = curl_init($url);

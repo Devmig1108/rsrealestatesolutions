@@ -17,7 +17,10 @@ $formIsConfigured = $tokenSecret !== '' && $turnstileSiteKey !== '';
 
 ?>
 
+<?php if (empty($GLOBALS['rsTurnstileScriptLoaded'])): ?>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php $GLOBALS['rsTurnstileScriptLoaded'] = true; ?>
+<?php endif; ?>
 
 <form class="contact-form" action="/process-form.php" method="post">
     <div class="form-honeypot" aria-hidden="true">
@@ -29,6 +32,7 @@ $formIsConfigured = $tokenSecret !== '' && $turnstileSiteKey !== '';
     <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="hidden" name="service" value="HVAC Services">
     <input type="hidden" name="form_context" value="Residential AC Repair Google Ads">
+    <input type="hidden" name="form_return_anchor" value="request-service">
 
     <div class="field-row">
         <label>Full name *

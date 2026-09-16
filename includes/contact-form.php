@@ -16,9 +16,13 @@ $formToken = base64_encode($issuedAt . '.' . $nonce . '.' . $signature);
 
 // Grab the Turnstile Site Key
 $turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
+$formReturnAnchor = $formReturnAnchor ?? 'contact';
 ?>
 
+<?php if (empty($GLOBALS['rsTurnstileScriptLoaded'])): ?>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php $GLOBALS['rsTurnstileScriptLoaded'] = true; ?>
+<?php endif; ?>
 
 <form class="contact-form" action="/process-form.php" method="post">
   
@@ -29,6 +33,7 @@ $turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
   </div>
 
   <input type="hidden" name="form_token" value="<?php echo htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8'); ?>">
+  <input type="hidden" name="form_return_anchor" value="<?php echo htmlspecialchars($formReturnAnchor, ENT_QUOTES, 'UTF-8'); ?>">
 
   <div class="field-row">
     <label>Full Name<input type="text" name="name" autocomplete="name" required></label>
@@ -44,6 +49,7 @@ $turnstileSiteKey = defined('TURNSTILE_SITE_KEY') ? TURNSTILE_SITE_KEY : '';
         <option>Construction Services</option>
         <option>Real Estate Solutions</option>
         <option>HVAC Services</option>
+        <option>Roofing Services</option>
         <option>Not Sure Yet</option>
       </select>
     </label>

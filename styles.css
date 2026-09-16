@@ -153,17 +153,21 @@ select {
   z-index: 10;
 }
 
-.main-nav a {
+.main-nav > a,
+.main-nav .services-nav-toggle {
   position: relative;
   color: rgba(255, 255, 255, .66);
+  font-family: inherit;
   font-size: .72rem;
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: .14em;
   text-transform: uppercase;
   transition: color .25s ease;
 }
 
-.main-nav a::after {
+.main-nav > a::after,
+.main-nav .services-nav-toggle::after {
   content: "";
   position: absolute;
   left: 0;
@@ -174,11 +178,21 @@ select {
   transition: right .25s ease;
 }
 
-.main-nav a:hover {
+.main-nav > a:hover,
+.main-nav > a:focus-visible,
+.main-nav .services-nav-toggle:hover,
+.main-nav .services-nav-toggle:focus-visible,
+.services-nav.is-open .services-nav-toggle,
+.services-nav:focus-within .services-nav-toggle {
   color: #fff;
 }
 
-.main-nav a:hover::after {
+.main-nav > a:hover::after,
+.main-nav > a:focus-visible::after,
+.main-nav .services-nav-toggle:hover::after,
+.main-nav .services-nav-toggle:focus-visible::after,
+.services-nav.is-open .services-nav-toggle::after,
+.services-nav:focus-within .services-nav-toggle::after {
   right: 0;
 }
 
@@ -2130,21 +2144,11 @@ select {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-
     margin: 0;
     padding: 0;
-
-    color: inherit;
     background: transparent;
     border: 0;
-
     cursor: pointer;
-
-    font: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    line-height: inherit;
 }
 
 
@@ -2395,10 +2399,89 @@ select {
 
 
 /* ==========================================================================
+   NESTED ROOFING SUBMENU
+   ========================================================================== */
+
+.services-dropdown-group {
+    position: relative;
+}
+
+.services-dropdown-group::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 18px;
+    height: 100%;
+}
+
+.services-submenu {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 12px);
+    z-index: 1210;
+    width: 310px;
+    padding: 9px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(10px);
+    color: #fff;
+    background: linear-gradient(145deg, rgba(9, 15, 22, .99), rgba(18, 29, 40, .99));
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 13px;
+    box-shadow: 0 28px 75px rgba(0, 0, 0, .34);
+    backdrop-filter: blur(20px);
+    transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
+}
+
+.roofing-nav:hover .services-submenu,
+.roofing-nav:focus-within .services-submenu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.services-submenu a {
+    display: grid;
+    gap: 3px;
+    padding: 13px 14px;
+    color: rgba(255, 255, 255, .78);
+    border-radius: 8px;
+    transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.services-submenu a:hover,
+.services-submenu a:focus-visible {
+    color: #fff;
+    background: rgba(255, 255, 255, .06);
+    transform: translateX(3px);
+}
+
+.services-submenu span {
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.services-submenu small {
+    color: rgba(255, 255, 255, .44);
+    font-size: .64rem;
+    line-height: 1.45;
+}
+
+.roofing-nav:hover .services-dropdown-nested-arrow,
+.roofing-nav:focus-within .services-dropdown-nested-arrow {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
    MOBILE SERVICES NAV
    ========================================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1160px) {
 
     .services-nav {
         display: block;
@@ -2479,7 +2562,7 @@ select {
     .services-nav.is-open .services-dropdown,
     .services-nav:focus-within.is-open
     .services-dropdown {
-        max-height: 340px;
+        max-height: 720px;
 
         margin-top: 14px;
 
@@ -2526,6 +2609,47 @@ select {
 
     .services-dropdown-copy small {
         max-width: none;
+    }
+
+    .services-dropdown-group::after {
+        display: none;
+    }
+
+    .services-submenu {
+        position: static;
+        width: auto;
+        margin: 0 0 8px 46px;
+        padding: 4px 0 4px 12px;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+        background: transparent;
+        border: 0;
+        border-left: 1px solid rgba(224, 187, 130, .22);
+        border-radius: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+
+    .services-submenu a {
+        padding: 10px 10px;
+        border-radius: 0;
+    }
+
+    .services-submenu a:hover,
+    .services-submenu a:focus-visible {
+        background: rgba(255, 255, 255, .035);
+        transform: none;
+    }
+
+    .services-dropdown-nested-arrow {
+        transform: rotate(90deg);
+    }
+
+    .roofing-nav:hover .services-dropdown-nested-arrow,
+    .roofing-nav:focus-within .services-dropdown-nested-arrow {
+        transform: rotate(90deg);
     }
 
 }

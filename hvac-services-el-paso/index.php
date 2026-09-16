@@ -88,8 +88,9 @@ include '../includes/header.php';
         </div>
         
         <?php 
-        // This pulls in your fully secured shared contact form component 
+        // This pulls in your fully secured shared contact form component
         // complete with Cloudflare Turnstile and the token engine.
+        $formReturnAnchor = 'contact';
         include '../includes/contact-form.php'; 
         ?>
 

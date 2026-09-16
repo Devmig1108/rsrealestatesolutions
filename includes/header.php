@@ -275,9 +275,7 @@ $ogImage = $ogImage
                     <button class="services-nav-toggle" type="button" aria-expanded="false"
                         aria-controls="services-nav-menu">
 
-                        <span>
-                            Services
-                        </span>
+                        <span>Services</span>
 
                         <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
                             <path d="M5 7.5L10 12.5L15 7.5" />
@@ -285,72 +283,47 @@ $ogImage = $ogImage
 
                     </button>
 
-
                     <div class="services-dropdown" id="services-nav-menu">
 
                         <div class="services-dropdown-header">
-
-                            <span>
-                                Property Services
-                            </span>
-
-                            <p>
-                                Explore specialized services from RS.
-                            </p>
-
+                            <span>Property Services</span>
+                            <p>Explore specialized services from RS.</p>
                         </div>
 
-
                         <a class="services-dropdown-item" href="/hvac-services-el-paso/">
-
-                            <span class="services-dropdown-number">
-                                01
-                            </span>
-
+                            <span class="services-dropdown-number">01</span>
                             <span class="services-dropdown-copy">
-
-                                <strong>
-                                    HVAC Services
-                                </strong>
-
-                                <small>
-                                    Heating, cooling, repair,
-                                    installation & maintenance
-                                </small>
-
+                                <strong>HVAC Services</strong>
+                                <small>Heating, cooling, repair, installation &amp; maintenance</small>
                             </span>
-
-                            <span class="services-dropdown-arrow" aria-hidden="true">
-                                →
-                            </span>
-
+                            <span class="services-dropdown-arrow" aria-hidden="true">→</span>
                         </a>
 
+                        <div class="services-dropdown-group roofing-nav">
+                            <a class="services-dropdown-item services-dropdown-parent" href="/roofing-services-el-paso/" aria-haspopup="true">
+                                <span class="services-dropdown-number">02</span>
+                                <span class="services-dropdown-copy">
+                                    <strong>Roofing Services</strong>
+                                    <small>Roof repair, replacement, inspections &amp; maintenance</small>
+                                </span>
+                                <span class="services-dropdown-arrow services-dropdown-nested-arrow" aria-hidden="true">›</span>
+                            </a>
 
-                        <a class="services-dropdown-item" href="/roofing-services-el-paso/">
-
-                            <span class="services-dropdown-number">
-                                02
-                            </span>
-
-                            <span class="services-dropdown-copy">
-
-                                <strong>
-                                    Roofing Services
-                                </strong>
-
-                                <small>
-                                    Roof repair, replacement,
-                                    inspections & maintenance
-                                </small>
-
-                            </span>
-
-                            <span class="services-dropdown-arrow" aria-hidden="true">
-                                →
-                            </span>
-
-                        </a>
+                            <div class="services-submenu" aria-label="Roofing services">
+                                <a href="/roofing-services-el-paso/">
+                                    <span>Roofing Overview</span>
+                                    <small>Explore all roofing services</small>
+                                </a>
+                                <a href="/roof-repair-el-paso/">
+                                    <span>Roof Repair</span>
+                                    <small>Leaks, damage &amp; localized repairs</small>
+                                </a>
+                                <a href="/roof-replacement-el-paso/">
+                                    <span>Roof Replacement</span>
+                                    <small>Replacement planning &amp; full roof systems</small>
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 

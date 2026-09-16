@@ -17,6 +17,7 @@ $formIsConfigured = $tokenSecret !== '' && $turnstileSiteKey !== '';
 $roofFormService = $roofFormService ?? 'Roofing Services';
 $roofFormContext = $roofFormContext ?? 'Residential Roof Repair Google Ads';
 $roofSubmitText = $roofSubmitText ?? 'Request my roofing callback';
+$roofFormReturnAnchor = $roofFormReturnAnchor ?? 'roofing-contact';
 ?>
 
 <?php if (empty($GLOBALS['rsTurnstileScriptLoaded'])): ?>
@@ -34,6 +35,7 @@ $roofSubmitText = $roofSubmitText ?? 'Request my roofing callback';
     <input type="hidden" name="form_token" value="<?= htmlspecialchars($formToken, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="hidden" name="service" value="<?= htmlspecialchars($roofFormService, ENT_QUOTES, 'UTF-8'); ?>">
     <input type="hidden" name="form_context" value="<?= htmlspecialchars($roofFormContext, ENT_QUOTES, 'UTF-8'); ?>">
+    <input type="hidden" name="form_return_anchor" value="<?= htmlspecialchars($roofFormReturnAnchor, ENT_QUOTES, 'UTF-8'); ?>">
 
     <div class="field-row">
         <label>Full name *

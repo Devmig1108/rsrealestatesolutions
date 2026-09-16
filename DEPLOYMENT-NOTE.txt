@@ -1,19 +1,57 @@
 RS Real Estate Solutions - Full Updated Project
 
-This package is a complete copy of the project supplied in this chat, with the new
-organic roofing pages integrated:
+This package is a complete project replacement based on the version supplied in this chat.
 
-- /roof-repair-el-paso/index.php
-- /roof-replacement-el-paso/index.php
-- /assets/css/roofing-detail.css
+UPDATED PAID-CAMPAIGN URL STRUCTURE
 
-Existing HVAC pages, roofing service hub, paid roofing landing page, includes,
-forms, assets, scripts, and shared site files are also included.
+Paid/ad landing pages now live under /offers/:
 
-The .git directory was intentionally excluded from this deployment package.
+- /offers/hvac-repair-el-paso/
+- /offers/hvac-repair-el-paso/request-received/
+- /offers/roof-repair-el-paso/
+- /offers/roof-repair-el-paso/request-received/
 
-IMPORTANT:
-The config/secure_env.php file in this package is the same configuration that was
-present in the project you uploaded. If your live server has newer credentials or
-environment-specific settings, preserve the live server version before replacing
-the project.
+The former URLs are retained as permanent redirects so old links do not immediately break:
+
+- /hvac-repair-el-paso/ -> /offers/hvac-repair-el-paso/
+- /roofing-repair-el-paso/ -> /offers/roof-repair-el-paso/
+- /hvac-request-received/ -> /offers/hvac-repair-el-paso/request-received/
+- /roofing-request-received/ -> /offers/roof-repair-el-paso/request-received/
+
+Update Google Ads final URLs to the new /offers/ URLs after deployment rather than relying on the redirects long term.
+
+ORGANIC ROOFING PAGES
+
+These remain at the root as indexable SEO pages:
+
+- /roofing-services-el-paso/
+- /roof-repair-el-paso/
+- /roof-replacement-el-paso/
+
+NAVIGATION
+
+- The Services control now uses the same typography, color, hover underline, and spacing treatment as the other primary navigation links.
+- Roofing has a nested submenu with Roofing Overview, Roof Repair, and Roof Replacement.
+- The nested roofing links display as a secondary list inside the mobile Services accordion.
+
+FORMS / EMAIL DELIVERY
+
+All forms continue posting to:
+
+- /process-form.php
+
+The shared processor still uses the existing secure configuration, Cloudflare Turnstile validation, and ZeptoMail delivery settings.
+
+Form routing was also tightened so each form returns to the correct section on validation errors, while successful paid-campaign submissions go to their matching request-received page under /offers/.
+
+The roofing ad form now receives its own roofing email subject/heading and includes the selected roofing concern in the email. Organic roofing forms also include the selected roofing concern.
+
+IMPORTANT SERVER REQUIREMENT
+
+process-form.php uses PHP cURL for both Cloudflare Turnstile verification and ZeptoMail. The production PHP environment must have the cURL extension enabled. The original project already depended on this extension; the updated processor now fails gracefully instead of throwing a fatal error when it is unavailable.
+
+CONFIGURATION
+
+The config/secure_env.php file in this package is the same configuration that was present in the project supplied in this chat. If the live server has newer or environment-specific credentials, preserve the live version before replacing the project.
+
+The .git directory is not included in the deployment package.

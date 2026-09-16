@@ -543,6 +543,7 @@ include '../includes/header.php';
             <div class="roof-service-form">
 
                 <?php
+                $formReturnAnchor = 'roofing-contact';
                 include '../includes/contact-form.php';
                 ?>
 
